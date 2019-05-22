@@ -69,7 +69,6 @@ vifm \
 x11-utils \
 x11-xserver-utils \
 xbacklight \
-xbindkeys \
 xcape \
 xclip \
 xdg-user-dirs \
