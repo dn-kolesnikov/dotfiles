@@ -52,7 +52,6 @@ p7zip-full \
 policykit-1 \
 pulseaudio \
 pulsemixer \
-scrot \
 software-properties-common \
 streamlink \
 stterm \
