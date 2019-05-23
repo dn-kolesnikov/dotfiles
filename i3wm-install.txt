@@ -4,12 +4,14 @@ adwaita-icon-theme-full \
 alsa-utils \
 apt-transport-https \
 at-spi2-core \
+atool \
 build-essential \
 byobu \
 calcurse \
 compton \
 cups \
 dkms \
+docx2txt \
 dosfstools \
 dunst \
 exfat-fuse \
@@ -19,6 +21,8 @@ firefox \
 firefox-locale-ru \
 flashplugin-installer \
 fonts-{dejavu-core,dejavu-extra,emojione,font-awesome,liberation,symbola,inconsolata} \
+foomatic-db-compressed-ppds \
+fzf \
 gawk \
 gir1.2-gtk-3.0 \
 gir1.2-notify-0.7 \
@@ -31,6 +35,7 @@ i3-wm \
 i3blocks \
 i3lock \
 imagemagick \
+jmptfs \
 language-pack-gnome-ru \
 language-pack-gnome-ru-base \
 language-pack-ru \
@@ -39,6 +44,8 @@ libreoffice \
 libreoffice-l10n-ru \
 maim \
 mc \
+mediainfo \
+mpc \
 mpd \
 mpv \
 mupdf \
@@ -48,8 +55,11 @@ neovim \
 network-manager \
 nitrogen \
 ntfs-3g \
+odt2txt \
+openprinting-ppds \
 p7zip-full \
 policykit-1 \
+printer-driver-{brlaser,c2050,c2esp,cjet,cups-pdf,dymo,escpr,foo2zjs,foo2zjs-common,fujixerox,gutenprint,hpcups,hpijs,indexbraille,m2300w,min12xxw,oki,pnm2ppa,postscript-hp,ptouch,pxljr,sag-gdi,splix} \
 pulseaudio \
 pulsemixer \
 software-properties-common \
@@ -59,10 +69,13 @@ subversion \
 suckless-tools \
 sxhkd \
 sxiv \
+tree \
 ttf-mscorefonts-installer \
 udiskie \
+unclutter \
 unrar \
 unzip \
+urlscan \
 usb-modeswitch \
 vifm \
 x11-utils \
@@ -91,6 +104,6 @@ zathura-pdf-poppler \
 zathura-ps \
 zip \
 
-
 #########################################
 sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
+
