@@ -5,10 +5,11 @@ alsa-utils \
 apt-transport-https \
 at-spi2-core \
 atool \
+breeze-cursor-theme \
+breeze-icon-theme \
 build-essential \
 byobu \
 calcurse \
-compton \
 cups \
 dkms \
 docx2txt \
@@ -30,6 +31,7 @@ git \
 gstreamer1.0-libav \
 gstreamer1.0-plugins-{bad,base,good,ugly} \
 highlight \
+hsetroot \
 hunspell-ru \
 i3-wm \
 i3blocks \
@@ -42,6 +44,7 @@ language-pack-ru \
 language-pack-ru-base \
 libreoffice \
 libreoffice-l10n-ru \
+libreoffice-style-breeze \
 maim \
 mc \
 mediainfo \
@@ -78,11 +81,13 @@ unzip \
 urlscan \
 usb-modeswitch \
 vifm \
+w3m \
 x11-utils \
 x11-xserver-utils \
 xbacklight \
 xcape \
 xclip \
+xcompmgr \
 xdg-user-dirs \
 xdg-utils \
 xdotool \
@@ -104,6 +109,6 @@ zathura-pdf-poppler \
 zathura-ps \
 zip \
 
-#########################################
+####################################################
 sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
 
