@@ -17,6 +17,7 @@ dosfstools \
 dunst \
 exfat-fuse \
 exfat-utils \
+exuberant-ctags \
 ffmpeg \
 firefox \
 firefox-locale-ru \
