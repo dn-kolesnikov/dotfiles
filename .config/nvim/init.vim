@@ -25,6 +25,24 @@ call plug#end()
 
 " Some basics:
   set nocompatible
+
+  set backup
+  set backupdir=/tmp/vim/backup              " where to put backup files
+  set directory=/tmp/vim/swap                " where to put swap files
+  let g:SESSION_DIR='/tmp/vim/sessions'      " where to keep sessions
+
+  if finddir(&backupdir) == ''
+    silent call mkdir(&backupdir, "p")
+  endif
+
+  if finddir(&directory) == ''
+    silent call mkdir(&directory, "p")
+  endif
+
+  if finddir(g:SESSION_DIR) == ''
+    silent call mkdir(g:SESSION_DIR, "p")
+  endif
+
   set mousehide
   set mouse=a
   set nohlsearch
