@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'jreybert/vimagit'
   Plug 'kovetskiy/sxhkd-vim'
   Plug 'mitsuhiko/vim-jinja'
+  Plug 'plytophogy/vim-virtualenv'
   Plug 'python-mode/python-mode'
   Plug 'scrooloose/nerdtree'
   Plug 'tpope/vim-commentary'
@@ -76,9 +77,11 @@ call plug#end()
   let g:pymode_options = 0
   let g:pymode_lint_write = 0
   let g:pymode_folding = 0
+  let g:pymode_rope = 0
+  let g:pymode_rope_autoimport = 0
   let g:pymode_rope_vim_completion = 0
 
-" Vim-Airline settings
+  " Vim-Airline settings
   let g:airline_theme='simple'
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'

@@ -46,6 +46,7 @@ language-pack-ru-base \
 libreoffice \
 libreoffice-l10n-ru \
 libreoffice-style-breeze \
+lynx \
 maim \
 mc \
 mediainfo \
