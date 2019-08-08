@@ -22,7 +22,7 @@ ffmpeg \
 firefox \
 firefox-locale-ru \
 flashplugin-installer \
-fonts-{dejavu-core,dejavu-extra,emojione,font-awesome,liberation,symbola,inconsolata} \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,liberation,symbola,inconsolata} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \
