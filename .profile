@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/usr/bin/env sh
 # Profile file. Runs on login.
 
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+
 export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="firefox"
@@ -11,6 +12,14 @@ export FILE="vifm"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
+
+# bspwm
+export BSPWM_SOCKET="/tmp/bspwm.socket"
+export BSPWM_TREE="/tmp/bspwm.tree"
+export BSPWM_HISTORY="/tmp/bspwm.history"
+export BSPWM_STACK="/tmp/bspwm.stack"
+export PANEL_FIFO="/tmp/panel-fifo"
+export PANEL_HEIGHT=14
 
 # less/man colors
 export LESS=-R
