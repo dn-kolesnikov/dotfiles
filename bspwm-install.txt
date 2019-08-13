@@ -106,6 +106,7 @@ xserver-xorg-video-fbdev \
 xserver-xorg-video-intel \
 xserver-xorg-video-vesa \
 xsettingsd \
+xtitle \
 youtube-dl \
 zathura \
 zathura-djvu \
