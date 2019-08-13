@@ -1,12 +1,14 @@
 #!/bin/sh
 
 # bspwm
-export BSPWM_SOCKET="/tmp/bspwm.socket"
-export BSPWM_TREE="/tmp/bspwm.tree"
 export BSPWM_HISTORY="/tmp/bspwm.history"
+export BSPWM_PANEL_FIFO="/tmp/bspwm.panelfifo"
+export BSPWM_PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+export BSPWM_PANEL_HEIGHT=14
+export BSPWM_PANEL_WM_NAME="bspwm_panel"
+export BSPWM_SOCKET="/tmp/bspwm.socket"
 export BSPWM_STACK="/tmp/bspwm.stack"
-export PANEL_FIFO="/tmp/bspwm.panelfifo"
-export PANEL_HEIGHT=14
+export BSPWM_TREE="/tmp/bspwm.tree"
 
 #setbg &                     # Set the background
 sxhkd &                     # Bind keys
