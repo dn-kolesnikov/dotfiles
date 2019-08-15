@@ -27,6 +27,6 @@ echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc
 
 #[ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
 
-# Start graphical server if i3 not already running.
+# Start graphical server if bspwm not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
