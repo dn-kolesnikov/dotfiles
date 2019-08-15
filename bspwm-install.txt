@@ -36,7 +36,7 @@ highlight \
 hsetroot \
 hunspell-ru \
 imagemagick \
-jmptfs \
+jmtpfs \
 language-pack-gnome-ru \
 language-pack-gnome-ru-base \
 language-pack-ru \
