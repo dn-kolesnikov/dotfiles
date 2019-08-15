@@ -42,6 +42,7 @@ language-pack-gnome-ru-base \
 language-pack-ru \
 language-pack-ru-base \
 lemonbar \
+libnotify-bin \
 libreoffice \
 libreoffice-l10n-ru \
 libreoffice-style-breeze \
