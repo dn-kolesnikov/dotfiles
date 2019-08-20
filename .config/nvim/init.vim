@@ -17,6 +17,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'honza/vim-snippets'
     Plug 'jreybert/vimagit'
+    Plug 'kien/ctrlp.vim'
     Plug 'kovetskiy/sxhkd-vim'
     Plug 'mitsuhiko/vim-jinja'
     Plug 'plytophogy/vim-virtualenv'
