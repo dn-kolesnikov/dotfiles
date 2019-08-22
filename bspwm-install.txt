@@ -1,3 +1,5 @@
+#!/usr/bin/evn bash
+
 sudo apt install --no-install-recommends \
 acpi-support \
 adwaita-icon-theme-full \
