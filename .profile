@@ -25,8 +25,6 @@ export LESS_TERMCAP_ue="$(printf '%b' '[0m')"; a="${a%_}"
 
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
-#[ ! -f ~/.config/shortcutrc ] && shortcuts >/dev/null 2>&1
-
 # Modular visual interface for GDB in Python
 # https://github.com/cyrus-and/gdb-dashboard
 [ ! -f ~/.gdbinit ] && wget -P ~ git.io/.gdbinit >/dev/null 2>&1
