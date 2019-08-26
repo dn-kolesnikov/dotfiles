@@ -12,16 +12,10 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'SirVer/ultisnips'
-    Plug 'davidhalter/jedi-vim'
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'honza/vim-snippets'
     Plug 'jreybert/vimagit'
-    Plug 'kien/ctrlp.vim'
     Plug 'kovetskiy/sxhkd-vim'
-    Plug 'mitsuhiko/vim-jinja'
     Plug 'plytophogy/vim-virtualenv'
-    Plug 'python-mode/python-mode'
     Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-commentary'
     Plug 'tpope/vim-repeat'
@@ -29,7 +23,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vifm/vifm.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'xavierd/clang_complete'
+    Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Some basics:
@@ -76,20 +70,6 @@ call plug#end()
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
     set splitbelow splitright
 
-" Nerd tree
-    map <leader>n :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" Python-mode settings
-    let g:pymode_options = 0
-    let g:pymode_lint_write = 0
-    let g:pymode_folding = 0
-    let g:pymode_rope = 0
-    let g:pymode_rope_autoimport = 0
-    let g:pymode_rope_vim_completion = 0
-    let g:pymode_python = 'python3'
-
 " Vim-Airline settings
     let g:airline_theme='simple'
     let g:airline#extensions#tabline#enabled = 1
@@ -100,28 +80,17 @@ call plug#end()
         let g:airline_powerline_fonts = 0
     endif
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" If you want :UltiSnipsEdit to split your window.
-    let g:UltiSnipsEditSplit="vertical"
+" Nerd tree
+    map <leader>n :NERDTreeToggle<CR>
+    let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Clang-completer
-" Включить дополнительные подсказки (аргументы функций, шаблонов и т.д.)
-    let g:clang_snippets=1
-" Использоать ultisnips для дополнительных подскахок (чтобы подсказки шаблонов
-" автогенерации были в выпадающих меню)
-    let g:clang_snippets_engine = 'ultisnips'
-" Периодически проверять проект на ошибки
-    let g:clang_periodic_quickfix=1
-" Подсвечивать ошибки
-    let g:clang_hl_errors=1
-" Автоматически закрывать окно подсказок после выбора подсказки
-    let g:clang_close_preview=1
-" По нажатию Ctrl+F проверить поект на ошибки
-    map <c-f> :call g:ClangUpdateQuickFix()<cr>
-
-" Run xrdb whenever Xdefaults or Xresources are updated.
-    autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
+" Python-mode settings
+"    let g:pymode_options = 0
+"    let g:pymode_lint_write = 0
+"    let g:pymode_folding = 0
+"    let g:pymode_rope = 0
+"    let g:pymode_rope_autoimport = 0
+"    let g:pymode_rope_vim_completion = 0
+"    let g:pymode_python = 'python3'
 
