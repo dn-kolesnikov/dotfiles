@@ -94,3 +94,5 @@ call plug#end()
 "    let g:pymode_rope_vim_completion = 0
 "    let g:pymode_python = 'python3'
 
+" YouCompleteMe settings
+"    let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py"
