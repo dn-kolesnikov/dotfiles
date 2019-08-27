@@ -13,7 +13,9 @@ bspwm \
 build-essential \
 byobu \
 calcurse \
+cmake \
 cups \
+curl \
 dkms \
 docx2txt \
 dosfstools \
@@ -70,8 +72,8 @@ policykit-1 \
 printer-driver-{brlaser,c2050,c2esp,cjet,cups-pdf,dymo,escpr,foo2zjs,foo2zjs-common,fujixerox,gutenprint,hpcups,hpijs,indexbraille,m2300w,min12xxw,oki,pnm2ppa,postscript-hp,ptouch,pxljr,sag-gdi,splix} \
 pulseaudio \
 pulsemixer \
-python3-pygments \
 python3-pip \
+python3-pygments \
 software-properties-common \
 streamlink \
 stterm \
