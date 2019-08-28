@@ -95,4 +95,7 @@ call plug#end()
 "    let g:pymode_python = 'python3'
 
 " YouCompleteMe settings
-"    let g:ycm_global_ycm_extra_conf = "~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py"
+    let g:ycm_python_binary_path = 'python3'
+    let g:ycm_autoclose_preview_window_after_completion = 1
+    let g:ycm_min_num_of_chars_for_completion = 1
+
