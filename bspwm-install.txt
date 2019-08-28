@@ -1,6 +1,6 @@
 #!/usr/bin/evn bash
 
-sudo apt install --no-install-recommends \
+apt install --no-install-recommends \
 acpi-support \
 adwaita-icon-theme-full \
 alsa-utils \
@@ -77,7 +77,6 @@ python3-pygments \
 software-properties-common \
 streamlink \
 stterm \
-subversion \
 suckless-tools \
 sxhkd \
 sxiv \
@@ -122,5 +121,5 @@ zathura-ps \
 zip \
 
 ####################################################
-sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
+# sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
 
