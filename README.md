@@ -31,7 +31,7 @@ Host github.com
 ```python3 -m venv venv```
 
 ## 2. активируем это окружение
-source venv/bin/activate
+```source venv/bin/activate```
 
 ## 3. делаем сборку
 ```python3 ./install.py --clang-completer```
