@@ -19,3 +19,21 @@ Host github.com
     PreferredAuthentications publickey
     PKCS11Provider /usr/lib/librtpkcs11ecp.so
 ```
+
+# Настройка плагина для VIM - YouCompleteMe
+
+настройка этого плагина должна быть такой, после того, как его установили через vim-plug
+по умолчению это каталог ~/.vim/pluged/YouCompleteMe
+
+```cd ~/.vim/pluged/YouCompleteMe```
+
+## 1. создаем виртуальное окружение для python
+```python3 -m venv venv```
+
+## 2. активируем это окружение
+source venv/bin/activate
+
+## 3. делаем сборку
+```python3 ./install.py --clang-completer```
+
+без виртуального окружения, может ничего не заработать!!!
