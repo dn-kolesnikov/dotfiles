@@ -13,6 +13,7 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'jreybert/vimagit'
     Plug 'kovetskiy/sxhkd-vim'
     Plug 'plytophogy/vim-virtualenv'

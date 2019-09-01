@@ -50,6 +50,7 @@ libnotify-bin \
 libreoffice \
 libreoffice-l10n-ru \
 libreoffice-style-breeze \
+lilyterm \
 lynx \
 maim \
 mc \
@@ -78,7 +79,6 @@ python3-pygments \
 python3-venv \
 software-properties-common \
 streamlink \
-stterm \
 suckless-tools \
 sxhkd \
 sxiv \
