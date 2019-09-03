@@ -4,11 +4,11 @@
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
-export BROWSER="firefox"
+export BROWSER="x-www-browser"
 export EDITOR="nvim"
 export READER="zathura"
 export FILE="vifm"
-export TERMINAL="st"
+export TERMINAL="x-terminal-emulator"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
@@ -31,5 +31,4 @@ echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc
 
 # Start graphical server if bspwm not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
-
 
