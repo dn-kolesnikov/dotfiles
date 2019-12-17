@@ -26,7 +26,7 @@ ffmpeg \
 firefox \
 firefox-locale-ru \
 flashplugin-installer \
-fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,liberation,symbola,inconsolata} \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,liberation,symbola,inconsolata,ubuntu} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \
@@ -75,12 +75,12 @@ python3-dev \
 python3-pip \
 python3-pygments \
 python3-venv \
+sakura \
 software-properties-common \
 streamlink \
 suckless-tools \
 sxhkd \
 sxiv \
-terminology \
 tree \
 ttf-bitstream-vera \
 ttf-mscorefonts-installer \
@@ -120,6 +120,7 @@ zathura-djvu \
 zathura-pdf-poppler \
 zathura-ps \
 zip \
+;
 
 ####################################################
 # sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
@@ -132,6 +133,6 @@ zip \
 # slurp (выделение области на экране)
 # wf-recorder (захват видео) - нет
 # waybar (панель приложений) - нет
-# virtboard (экранная клавиатура) - нет 
+# virtboard (экранная клавиатура) - нет
 # wl-clipboard (работа с буфером обмена)
 # wallutils (управление обоями рабочего стола) - нет
