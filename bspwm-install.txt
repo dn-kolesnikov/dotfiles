@@ -62,7 +62,6 @@ mupdf-tools \
 ncmpcpp \
 neovim \
 network-manager \
-nitrogen \
 nmap \
 ntfs-3g \
 odt2txt \
@@ -115,6 +114,7 @@ xserver-xorg-video-intel \
 xserver-xorg-video-vesa \
 xsettingsd \
 xtitle \
+xwallpaper \
 youtube-dl \
 zathura \
 zathura-djvu \

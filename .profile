@@ -4,11 +4,11 @@
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
 
-export BROWSER="x-www-browser"
+export BROWSER="firefox"
 export EDITOR="nvim"
-export READER="zathura"
 export FILE="vifm"
-export TERMINAL="x-terminal-emulator"
+export READER="zathura"
+export TERMINAL="kitty"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch-config"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
