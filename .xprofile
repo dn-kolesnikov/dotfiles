@@ -11,11 +11,12 @@ export BSPWM_STACK="/tmp/bspwm.stack"
 export BSPWM_TREE="/tmp/bspwm.tree"
 
 # autoruns
-setbg &                     # Set the background
-sxhkd &                     # Bind keys
-xset r rate 300 50 &        # Speed xrate up
-unclutter &                 # Remove mouse when idle
-dunst &                     # dunst for notifications
-hsetroot -solid "#000000"
-xcompmgr &                  # xcompmgr for transparency
+sxhkd &                         # bind keys
+xset r rate 300 50 &            # speed xrate up
+unclutter &                     # remove mouse when idle
+yabar &                         # yabar panel
+dunst &                         # dunst for notifications
+setbg &                         # set the background
+hsetroot -solid "#000000" &     # удаляет серый фон, перед запуском xcompmgr
+(sleep 1 && xcompmgr) &         # xcompmgr for transparency
 
