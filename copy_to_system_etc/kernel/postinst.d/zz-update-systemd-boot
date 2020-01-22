@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# This is a simple custom kernel hook to populate the systemd-boot entries
+# whenever kernels are added or removed during an update.
+#
+
+
+# The PARTUUID of your root partition
+PARTUUID="301fcb31-085f-4f5a-8781-d8db77660126"
+
+vmlinuz=$(find /boot -maxdepth 1 -name "vmlinuz-*-generic")
+version=$(echo $vmlinuz | grep -o -P "\d+\.\d+\.\d+\-\d+" | sort -V | head -n -1)
+latest=$(echo $vmlinuz | grep -o -P "\d+\.\d+\.\d+\-\d+" | sort -V | tail -n 1)
+
+echo ">> COPYING ${latest}-generic. LATEST VERSION."
+
+cat << EOF > /boot/efi/loader/entries/ubuntu.conf
+title   Ubuntu
+linux   /ubuntu/vmlinuz-generic
+initrd  /ubuntu/initrd.img-generic
+options root=PARTUUID=${PARTUUID} rw quiet selinux=0 plymouth.enable=0
+EOF
+
+for file in initrd.img vmlinuz; do
+    cp "/boot/${file}-${latest}-generic" "/boot/efi/ubuntu/${file}-generic"
+done
+
+for ver in $version; do
+
+    echo ">> COPYING ${ver}-generic."
+
+cat << EOF > /boot/efi/loader/entries/ubuntu-${ver}.conf
+title   Ubuntu ${ver}
+linux   /ubuntu/vmlinuz-${ver}-generic
+initrd  /ubuntu/initrd.img-${ver}-generic
+options root=PARTUUID=${PARTUUID} rw quiet plymouth.enable=0
+EOF
+
+    for file in initrd.img vmlinuz; do
+        cp "/boot/${file}-${ver}-generic" "/boot/efi/ubuntu/${file}-${ver}-generic"
+    done
+done
+
+exit 0
