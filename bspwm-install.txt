@@ -2,7 +2,7 @@
 
 apt install --no-install-recommends \
 acpi-support \
-adwaita-icon-theme-full \
+adwaita-icon-theme \
 alsa-utils \
 apt-transport-https \
 at-spi2-core \
@@ -24,9 +24,7 @@ exfat-utils \
 exuberant-ctags \
 ffmpeg \
 firefox \
-firefox-locale-ru \
-flashplugin-installer \
-fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
+fonts-{cantarell,dejavu-core,dejavu-extra,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \
@@ -41,13 +39,8 @@ hunspell-ru \
 imagemagick \
 jmtpfs \
 kitty \
-language-pack-gnome-ru \
-language-pack-gnome-ru-base \
-language-pack-ru \
-language-pack-ru-base \
 libnotify-bin \
 libreoffice \
-libreoffice-l10n-ru \
 libreoffice-style-breeze \
 lynx \
 maim \
@@ -116,7 +109,6 @@ xserver-xorg-video-vesa \
 xsettingsd \
 xtitle \
 xwallpaper \
-yabar \
 youtube-dl \
 zathura \
 zathura-djvu \
