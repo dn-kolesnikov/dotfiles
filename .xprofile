@@ -1,20 +1,10 @@
 #!/usr/bin/env sh
 
-# bspwm environment
-export BSPWM_HISTORY="/tmp/bspwm.history"
-export BSPWM_PANEL_FIFO="/tmp/bspwm.panelfifo"
-export BSPWM_PANEL_FONT="-*-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
-export BSPWM_PANEL_HEIGHT=14
-export BSPWM_PANEL_WM_NAME="bspwm_panel"
-export BSPWM_SOCKET="/tmp/bspwm.socket"
-export BSPWM_STACK="/tmp/bspwm.stack"
-export BSPWM_TREE="/tmp/bspwm.tree"
-
 # autoruns
 sxhkd &                         # bind keys
 xset r rate 300 50 &            # speed xrate up
 unclutter &                     # remove mouse when idle
-#yabar &                         # yabar panel
+launch-bar &                    # start *bar panel
 dunst &                         # dunst for notifications
 setbg &                         # set the background
 hsetroot -solid "#000000" &     # удаляет серый фон, перед запуском xcompmgr

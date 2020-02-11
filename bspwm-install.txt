@@ -24,7 +24,8 @@ exfat-utils \
 exuberant-ctags \
 ffmpeg \
 firefox \
-fonts-{cantarell,dejavu-core,dejavu-extra,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
+flashplugin-installer \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \

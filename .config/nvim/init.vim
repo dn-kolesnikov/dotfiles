@@ -1,3 +1,5 @@
+if 0 | endif
+
 set exrc
 set secure
 
