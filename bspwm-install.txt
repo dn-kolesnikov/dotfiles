@@ -2,11 +2,11 @@
 
 apt install --no-install-recommends \
 acpi-support \
-adwaita-icon-theme \
 alsa-utils \
 apt-transport-https \
 at-spi2-core \
 atool \
+breeze-gtk-theme \
 breeze-cursor-theme \
 breeze-icon-theme \
 bspwm \
@@ -25,7 +25,7 @@ exuberant-ctags \
 ffmpeg \
 firefox \
 flashplugin-installer \
-fonts-{cantarell,dejavu-core,dejavu-extra,emojione,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,symbola,inconsolata,roboto,ubuntu} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \
