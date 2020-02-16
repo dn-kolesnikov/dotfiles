@@ -8,5 +8,5 @@ launch-bar &                    # start *bar panel
 dunst &                         # dunst for notifications
 setbg &                         # set the background
 hsetroot -solid "#000000" &     # удаляет серый фон, перед запуском xcompmgr
-(sleep 1 && xcompmgr) &         # xcompmgr for transparency
+(sleep 1 && compton) &          # compton for transparency
 
