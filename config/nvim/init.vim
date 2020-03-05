@@ -88,6 +88,9 @@ call plug#end()
     let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" To disable Python 2 support: >
+    let g:loaded_python_provider = 0
+
 " Python-mode settings
 "    let g:pymode_options = 0
 "    let g:pymode_lint_write = 0
