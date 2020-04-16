@@ -1,12 +1,16 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # If refreshing bspwm, remove all previous rules to prevent doubling up.
 bspc rule -r "*"
+
+# source the colors
+source ${HOME}/.cache/wal/colors.sh
 
 #### MONITORS ####
 #bspc monitor HDMI-A-0 -d 1 2 3 4 5 6 7 8 9
 #bspc monitor DVI-D-0 -d 1 2 3 4 5 6 7 8 9
 #bspc monitor VGA-1 -d 1 2 3 4 5 6 7 8 9
+bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9
 
 
 #### BSPWM configuration ####
@@ -29,14 +33,14 @@ bspc rule -r "*"
 #bspc config split_ratio                 0.50
 bspc config border_width                1
 bspc config focus_follows_pointer       true
-bspc config top_padding                 24
+bspc config top_padding                 19
 bspc config window_gap                  5
 
 #### BSPWM coloring ####
-bspc config active_border_color         "#1e1e1e"
-bspc config focused_border_color        "#5e81ac"
-bspc config normal_border_color         "#4c566a"
-bspc config presel_feedback_color       "#5e81ac"
+bspc config active_border_color         "$color2"
+bspc config focused_border_color        "$color15"
+bspc config normal_border_color         "$color1"
+bspc config presel_feedback_color       "$color1"
 
 #polybar hidden when fullscreen for vlc, youtube, mpv ...
 #find out the name of your monitor with xrandr
