@@ -1,5 +1,17 @@
 #!/usr/bin/env sh
 
-[ -f "$HOME/.xprofile" ] && source "$HOME/.xprofile"
+# autoruns
+dunst &                             # dunst for notifications
+launch-bar &                        # start *bar panel
+setbg &                             # set the background
+sxhkd &                             # bind keys
+unclutter &                         # remove mouse when idle
+udiskie -t &                        # управление монитрованием накопителей
+xset r rate 300 50 &                # speed xrate up
+xsetroot -cursor_name left_ptr &    # change default cursor
+hsetroot -solid "#000000" &         # удаляет серый фон, перед запуском compton
+(sleep 1 && compton) &              # compton for transparency
 
+# start windows manager
 exec bspwm
+

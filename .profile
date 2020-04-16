@@ -9,7 +9,6 @@ export EDITOR="nvim"
 export FILE="ranger"
 export READER="zathura"
 export TERMINAL="kitty"
-export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc-2.0"
 export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 
 # less/man colors

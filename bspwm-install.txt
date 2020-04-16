@@ -1,5 +1,11 @@
 #!/usr/bin/evn bash
 
+# no install recommends and suggests by default
+apt-config dump | grep -we Recommends -e Suggests | sed s/1/0/ | sudo tee /etc/apt/apt.conf.d/99norecommend
+
+# to accept the Microsoft EULA
+echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+
 apt install --no-install-recommends \
 acpi-support \
 alsa-utils \
@@ -48,6 +54,7 @@ lynx \
 maim \
 mc \
 mediainfo \
+mesa-{va,vdpau,vulkan}-drivers \
 mpc \
 mpd \
 mpv \
@@ -65,6 +72,7 @@ pipenv \
 policykit-1 \
 printer-driver-{brlaser,c2050,c2esp,cjet,cups-pdf,dymo,escpr,foo2zjs,foo2zjs-common,fujixerox,gutenprint,hpcups,hpijs,indexbraille,m2300w,min12xxw,oki,pnm2ppa,postscript-hp,ptouch,pxljr,sag-gdi,splix} \
 profile-sync-daemon \
+psmisc \
 pulseaudio \
 pulsemixer \
 python3-dev \
@@ -73,6 +81,7 @@ python3-pygments \
 python3-pynvim \
 python3-venv \
 ranger \
+screenkey \
 software-properties-common \
 stow \
 streamlink \
@@ -104,10 +113,7 @@ xfonts-terminus \
 xinit \
 xprintidle \
 xserver-xorg-core \
-xserver-xorg-input-all \
-xserver-xorg-video-fbdev \
-xserver-xorg-video-intel \
-xserver-xorg-video-vesa \
+xserver-xorg-input-libinput \
 xsettingsd \
 xtitle \
 xwallpaper \
@@ -120,46 +126,52 @@ zip \
 ;
 
 # for PolyBar build
-#apt install --no-install-recommends \
-#build-essential \
-#git \
-#cmake \
-#cmake-data \
-#pkg-config \
-#python3-sphinx \
-#libcairo2-dev \
-#libxcb1-dev \
-#libxcb-util0-dev \
-#libxcb-randr0-dev \
-#libxcb-composite0-dev \
-#python3-xcbgen \
-#xcb-proto \
-#libxcb-image0-dev \
-#libxcb-ewmh-dev \
-#libxcb-icccm4-dev \
-#libxcb-xkb-dev \
-#libxcb-xrm-dev \
-#libxcb-cursor-dev \
-#libasound2-dev \
-#libpulse-dev \
-#libjsoncpp-dev \
-#libmpdclient-dev \
-#libcurl4-openssl-dev \
-#libnl-genl-3-dev \
+apt install --no-install-recommends \
+build-essential \
+cmake-data \
+pkg-config \
+python3-sphinx \
+libcairo2-dev \
+libxcb1-dev \
+libxcb-util0-dev \
+libxcb-randr0-dev \
+libxcb-composite0-dev \
+python3-xcbgen \
+xcb-proto \
+libxcb-image0-dev \
+libxcb-ewmh-dev \
+libxcb-icccm4-dev \
+libxcb-xkb-dev \
+libxcb-xrm-dev \
+libxcb-cursor-dev \
+libasound2-dev \
+libpulse-dev \
+libjsoncpp-dev \
+libmpdclient-dev \
+libcurl4-openssl-dev \
+libnl-genl-3-dev \
 ;
 
+# python3 -m pip install pywal --user
 
-####################################################
-# sudo usermod -aG dialout,lpadmin,vboxusers,kvm $USER
+###################################################
+# sudo usermod -aG \
+#dialout,\
+#kvm, \
+#lpadmin,\
+#plugdev,\
+#vboxusers,\
+#video \
+#$USER
 
 # sway
 # swayidle (фоновый процесс с реализацией протокола KDE idle)
 # swaylock (хранитель экрана)
-# mako (менеджер уведомлений) - нет
+# mako (менеджер уведомлений)
 # grim (создание скриншотов)
 # slurp (выделение области на экране)
-# wf-recorder (захват видео) - нет
-# waybar (панель приложений) - нет
+# wf-recorder (захват видео)
+# waybar (панель приложений)
 # virtboard (экранная клавиатура) - нет
 # wl-clipboard (работа с буфером обмена)
 # wallutils (управление обоями рабочего стола) - нет

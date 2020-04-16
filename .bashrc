@@ -1,14 +1,5 @@
 #!/usr/bin/env bash
 
-# enable bash completion in interactive shells
-if ! shopt -oq posix; then
-    if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-    elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-    fi
-fi
-
 # Disable ctrl-s and ctrl-q.
 stty -ixon
 
@@ -22,4 +13,13 @@ export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput se
 
 # Source aliases
 [ -f "$HOME/.bash_aleases" ] && source "$HOME/.bash_aliases"
+
+# enable bash completion in interactive shells
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+    fi
+fi
 
