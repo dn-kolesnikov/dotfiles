@@ -12,7 +12,9 @@ HISTSIZE= HISTFILESIZE=
 export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
 
 # Source aliases
-[ -f "$HOME/.bash_aleases" ] && source "$HOME/.bash_aliases"
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
+fi
 
 # enable bash completion in interactive shells
 if ! shopt -oq posix; then

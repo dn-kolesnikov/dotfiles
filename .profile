@@ -1,15 +1,21 @@
 #!/usr/bin/env sh
 # Profile file. Runs on login.
 
-# Adds `~/.scripts` and all subdirectories to $PATH
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
+fi
+
+# set PATH so it includes golang's private bin if it exists
+if [ -d "$HOME/go/bin" ] ; then
+    export PATH="$PATH:$HOME/go/bin"
+fi
 
 export BROWSER="firefox"
 export EDITOR="nvim"
-export FILE="ranger"
+export FILE="lf"
 export READER="zathura"
 export TERMINAL="kitty"
-export SUDO_ASKPASS="$HOME/.local/bin/tools/dmenupass"
 
 # less/man colors
 export LESS=-R
