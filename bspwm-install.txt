@@ -83,7 +83,6 @@ python3-pip \
 python3-pygments \
 python3-pynvim \
 python3-venv \
-ranger \
 screenkey \
 software-properties-common \
 stow \
@@ -128,37 +127,11 @@ zathura-ps \
 zip \
 ;
 
-# for PolyBar build
-apt install --no-install-recommends \
-build-essential \
-cmake-data \
-pkg-config \
-python3-sphinx \
-libcairo2-dev \
-libxcb1-dev \
-libxcb-util0-dev \
-libxcb-randr0-dev \
-libxcb-composite0-dev \
-python3-xcbgen \
-xcb-proto \
-libxcb-image0-dev \
-libxcb-ewmh-dev \
-libxcb-icccm4-dev \
-libxcb-xkb-dev \
-libxcb-xrm-dev \
-libxcb-cursor-dev \
-libasound2-dev \
-libpulse-dev \
-libjsoncpp-dev \
-libmpdclient-dev \
-libcurl4-openssl-dev \
-libnl-genl-3-dev \
-;
-
 # python3 -m pip install --user msgpack
 # python3 -m pip install --user pywal
 # python3 -m pip install --user trash-cli
 # python3 -m pip install --user powerline-shell
+# python3 -m pip install --user wemake-python-styleguide
 # go get -u github.com/gokcehan/lf
 
 ###################################################
