@@ -24,6 +24,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'ptzz/lf.vim'
+    Plug 'rbgrouleff/bclose.vim'
 call plug#end()
 
 " Some basics:
@@ -87,7 +89,7 @@ call plug#end()
 " To disable Node JS support
     let g:loaded_node_provider = 0
 
-" Переключатель языка при выходе в коммандный режим
+" при выходе в коммандный режим, переключать язык на US
     let g:XkbSwitchEnabled = 1
 
 " Deoplete plugin
