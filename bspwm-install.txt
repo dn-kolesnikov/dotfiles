@@ -48,6 +48,7 @@ hunspell-ru \
 imagemagick \
 jmtpfs \
 kitty \
+lastpass-cli \
 libnotify-bin \
 libreoffice \
 libreoffice-style-breeze \
@@ -69,6 +70,7 @@ ntfs-3g \
 odt2txt \
 openprinting-ppds \
 p7zip-full \
+pass \
 pipenv \
 policykit-1 \
 printer-driver-{brlaser,c2050,c2esp,cjet,cups-pdf,dymo,escpr,foo2zjs,foo2zjs-common,fujixerox,gutenprint,hpcups,hpijs,indexbraille,m2300w,min12xxw,oki,pnm2ppa,postscript-hp,ptouch,pxljr,sag-gdi,splix} \

@@ -1,5 +1,12 @@
 # dotfiles
 
+# установка
+```
+git clone https://github.com/dn-kolesnikov/dotfiles
+cd dotfiles
+stow -v -t ~ `ls -d */`
+```
+
 # генерируем ключи на Rutoken
 ```
 pkcs11-tool --module /usr/lib/librtpkcs11ecp.so --keypairgen --key-type rsa:2048 -l --id 45
@@ -20,20 +27,4 @@ Host github.com
     PKCS11Provider /usr/lib/librtpkcs11ecp.so
 ```
 
-# Настройка плагина для VIM - YouCompleteMe
 
-настройка этого плагина должна быть такой, после того, как его установили через vim-plug
-по умолчению это каталог ~/.vim/pluged/YouCompleteMe
-
-```cd ~/.vim/pluged/YouCompleteMe```
-
-## 1. создаем виртуальное окружение для python
-```python3 -m venv venv```
-
-## 2. активируем это окружение
-```source venv/bin/activate```
-
-## 3. делаем сборку
-```python3 ./install.py --clang-completer```
-
-без виртуального окружения, может ничего не заработать!!!

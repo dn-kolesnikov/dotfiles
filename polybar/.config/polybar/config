@@ -54,10 +54,9 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = "Ubuntu Mono:style=Regular:size=11"
-font-1 = "Fira Code:style=Regular:size=9"
-font-2 = "FontAwesome:style=Solid"
-font-3 = "Noto Color Emoji:style=Regular:scale=10"
+font-0 = "Ubuntu Mono:style=Regular:size=11;0"
+font-1 = "FontAwesome:style=Solid;0"
+font-2 = "Noto Color Emoji:style=Regular:scale=10;0"
 
 ; Other modules: xkeyboard filesystem xbacklight backlight-acpi cpu memory temperature powermenu weather
 modules-left = bspwm xwindow

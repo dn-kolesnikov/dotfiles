@@ -18,15 +18,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'jreybert/vimagit'
     Plug 'kovetskiy/sxhkd-vim'
+    Plug 'lyokha/vim-xkbswitch'
     Plug 'plytophogy/vim-virtualenv'
-    Plug 'scrooloose/nerdtree'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tpope/vim-commentary'
-    Plug 'tpope/vim-repeat'
-    Plug 'tpope/vim-surround'
-    Plug 'vifm/vifm.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 " Some basics:
@@ -74,7 +71,7 @@ call plug#end()
     set splitbelow splitright
 
 " Vim-Airline settings
-    let g:airline_theme='base16_nord'
+    let g:airline_theme='simple'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
     if has("gui_running")
@@ -83,25 +80,16 @@ call plug#end()
         let g:airline_powerline_fonts = 0
     endif
 
-" Nerd tree
-    map <leader>n :NERDTreeToggle<CR>
-    let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" To disable Python 2 support: >
+" To disable Python 2 support
     let g:loaded_python_provider = 0
+" To disable Ruby support
+    let g:loaded_ruby_provider = 0
+" To disable Node JS support
+    let g:loaded_node_provider = 0
 
-" Python-mode settings
-"    let g:pymode_options = 0
-"    let g:pymode_lint_write = 0
-"    let g:pymode_folding = 0
-"    let g:pymode_rope = 0
-"    let g:pymode_rope_autoimport = 0
-"    let g:pymode_rope_vim_completion = 0
-"    let g:pymode_python = 'python3'
+" Переключатель языка при выходе в коммандный режим
+    let g:XkbSwitchEnabled = 1
 
-" YouCompleteMe settings
-    let g:ycm_python_binary_path = 'python3'
-    let g:ycm_autoclose_preview_window_after_completion = 1
-    let g:ycm_min_num_of_chars_for_completion = 1
+" Deoplete plugin
+    let g:deoplete#enable_at_startup = 1
 
