@@ -155,9 +155,10 @@ libcurl4-openssl-dev \
 libnl-genl-3-dev \
 ;
 
-# python3 -m pip install pywal --user
-# python3 -m pip install trash-cli --user
-# python3 -m pip install powerline-shell --user
+# python3 -m pip install --user msgpack
+# python3 -m pip install --user pywal
+# python3 -m pip install --user trash-cli
+# python3 -m pip install --user powerline-shell
 # go get -u github.com/gokcehan/lf
 
 ###################################################
