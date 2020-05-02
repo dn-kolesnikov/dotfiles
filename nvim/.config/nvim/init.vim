@@ -22,10 +22,13 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'plytophogy/vim-virtualenv'
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'tpope/vim-commentary'
+    Plug 'epheien/termdbg'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'ptzz/lf.vim'
     Plug 'rbgrouleff/bclose.vim'
+    Plug 'dense-analysis/ale'
+    Plug 'nvie/vim-flake8'
 call plug#end()
 
 " Some basics:
@@ -55,6 +58,10 @@ call plug#end()
     set spelllang=en,ru
     set encoding=utf-8
     set number relativenumber
+    set wrap linebreak nolist
+    set textwidth=76
+    set wrapmargin=76
+    set colorcolumn=80
     syntax on
     filetype on
     filetype plugin on
@@ -94,4 +101,5 @@ call plug#end()
 
 " Deoplete plugin
     let g:deoplete#enable_at_startup = 1
+
 
