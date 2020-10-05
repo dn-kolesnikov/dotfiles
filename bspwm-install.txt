@@ -4,7 +4,7 @@
 apt-config dump | grep -we Recommends -e Suggests | sed s/1/0/ | sudo tee /etc/apt/apt.conf.d/99norecommend
 
 # to accept the Microsoft EULA
-echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+#echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 
 apt install --no-install-recommends \
 acpi-support \
@@ -31,8 +31,7 @@ exfat-utils \
 exuberant-ctags \
 ffmpeg \
 firefox \
-flashplugin-installer \
-fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,symbola,inconsolata,roboto,ubuntu} \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,symbola,inconsolata,paratype,roboto,ubuntu} \
 foomatic-db-compressed-ppds \
 fzf \
 gawk \
@@ -91,8 +90,6 @@ suckless-tools \
 sxhkd \
 sxiv \
 tree \
-ttf-bitstream-vera \
-ttf-mscorefonts-installer \
 udiskie \
 unclutter \
 unrar \
@@ -147,7 +144,7 @@ zip \
 # sway
 # swayidle (фоновый процесс с реализацией протокола KDE idle)
 # swaylock (хранитель экрана)
-# mako (менеджер уведомлений)
+# mako-notifier (менеджер уведомлений)
 # grim (создание скриншотов)
 # slurp (выделение области на экране)
 # wf-recorder (захват видео)

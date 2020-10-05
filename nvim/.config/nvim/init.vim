@@ -14,6 +14,7 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
+    Plug 'takac/vim-hardtime'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'jreybert/vimagit'
@@ -29,6 +30,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'rbgrouleff/bclose.vim'
     Plug 'dense-analysis/ale'
     Plug 'nvie/vim-flake8'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " Some basics:
@@ -67,7 +69,7 @@ call plug#end()
     filetype plugin on
     filetype plugin indent on
 
-" Enable autocompletion:
+" Enable bash-like autocompletion:
     set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
@@ -76,8 +78,12 @@ call plug#end()
 " Spell-check set to <leader>o, 'o' for 'orthography':
     map <leader>o :setlocal spell! spelllang=en_us,ru_ru<CR>
 
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+" Splits open at the bottom and right, which is non-retarded,
+" unlike vim defaults.
     set splitbelow splitright
+
+" Enable Hard Time Plugin
+    let g:hardtime_default_on = 0
 
 " Vim-Airline settings
     let g:airline_theme='simple'
@@ -102,4 +108,12 @@ call plug#end()
 " Deoplete plugin
     let g:deoplete#enable_at_startup = 1
 
-
+" Vim-go plugin
+    let g:go_highlight_build_constraints = 1
+    let g:go_highlight_extra_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_types = 1
