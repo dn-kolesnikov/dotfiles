@@ -14,23 +14,24 @@ if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/plugged')
-    Plug 'takac/vim-hardtime'
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'dense-analysis/ale'
+    Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
     Plug 'editorconfig/editorconfig-vim'
+    Plug 'epheien/termdbg'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'jreybert/vimagit'
     Plug 'kovetskiy/sxhkd-vim'
     Plug 'lyokha/vim-xkbswitch'
+    Plug 'nvie/vim-flake8'
     Plug 'plytophogy/vim-virtualenv'
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    Plug 'tpope/vim-commentary'
-    Plug 'epheien/termdbg'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
     Plug 'ptzz/lf.vim'
     Plug 'rbgrouleff/bclose.vim'
-    Plug 'dense-analysis/ale'
-    Plug 'nvie/vim-flake8'
     Plug 'rust-lang/rust.vim'
+    Plug 'takac/vim-hardtime'
+    Plug 'tpope/vim-commentary'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Some basics:
