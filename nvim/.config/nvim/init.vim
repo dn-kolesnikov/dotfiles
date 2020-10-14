@@ -1,7 +1,6 @@
 if 0 | endif
 
 if ! filereadable(expand('~/.config/nvim/autoload/plug.vim'))
-    echo "Downloading junegunn/vim-plug to manage plugins..."
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
@@ -10,14 +9,11 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-    "Plug 'dense-analysis/ale'
     Plug 'editorconfig/editorconfig-vim'
-    Plug 'epheien/termdbg'
     Plug 'jreybert/vimagit'
     Plug 'lyokha/vim-xkbswitch'
     Plug 'nvie/vim-flake8'
     Plug 'plytophogy/vim-virtualenv'
-    Plug 'rbgrouleff/bclose.vim'
     Plug 'takac/vim-hardtime'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
@@ -40,11 +36,12 @@ call plug#end()
     set encoding=utf-8
     set number relativenumber
     set wrap linebreak nolist
-    set textwidth=76
-    set wrapmargin=76
-    set colorcolumn=80
+    set textwidth=80
+    set wrapmargin=80
+    set colorcolumn=+1
     syntax on
-    filetype plugin indent on
+    filetype plugin on
+    filetype indent on
 
 " Set command-line completion mode
     set wildmode=list:longest,full
@@ -136,6 +133,7 @@ call plug#end()
     let g:go_highlight_operators = 1
     let g:go_highlight_structs = 1
     let g:go_highlight_types = 1
+    let g:go_echo_command_info = 0
 
 " =============================================================================
 " UltiSnips plugin
