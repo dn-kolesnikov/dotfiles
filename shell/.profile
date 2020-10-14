@@ -31,6 +31,7 @@ fi
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
     export GDK_BACKEND=wayland
+    export QT_QPA_PLATFORM=wayland
     export MOZ_ENABLE_WAYLAND=1
 fi
 
@@ -41,5 +42,5 @@ echo "$0" | grep "bash$" >/dev/null && [ -f "$HOME/.bashrc" ] && source "$HOME/.
 [ ! -f "$HOME/.gdbinit" ] && wget -P $HOME git.io/.gdbinit >/dev/null 2>&1
 
 # Start graphical server if bspwm not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
+#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
 
