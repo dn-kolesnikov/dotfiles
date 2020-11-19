@@ -81,6 +81,10 @@ call plug#end()
     let g:netrw_browse_split = 4
     let g:netrw_liststyle = 3
     let g:netrw_winsize = 25
+ "   augroup ProjectDrawer
+ "       autocmd!
+ "       autocmd VimEnter * :Vexplore
+ "   augroup END
 
 " =============================================================================
 " Nvim provider support
@@ -135,16 +139,4 @@ call plug#end()
     let g:go_highlight_structs = 1
     let g:go_highlight_types = 1
     let g:go_echo_command_info = 0
-
-" =============================================================================
-" UltiSnips plugin
-" =============================================================================
-    " Trigger configuration. You need to change this to something else
-    " than <tab> if you use https://github.com/Valloric/YouCompleteMe.
-    "let g:UltiSnipsExpandTrigger="<tab>"
-    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
-    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-    " If you want :UltiSnipsEdit to split your window.
-    "let g:UltiSnipsEditSplit="vertical"
-
 

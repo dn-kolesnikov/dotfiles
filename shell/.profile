@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 # Profile file. Runs on login.
 
-export LESS_TERMCAP_mb=$(tput bold; tput setaf 2)
-export LESS_TERMCAP_md=$(tput bold; tput setaf 2)
-export LESS_TERMCAP_so=$(tput bold; tput setaf 3)
-export LESS_TERMCAP_se=$(tput rmso; tput sgr0)
-export LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 1)
-export LESS_TERMCAP_ue=$(tput sgr0)
-export LESS_TERMCAP_me=$(tput sgr0)
+export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
+export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
+export LESS_TERMCAP_me="$(printf '%b' '[0m')"
+export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
+export LESS_TERMCAP_se="$(printf '%b' '[0m')"
+export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
 
 export BROWSER="firefox"
 export EDITOR="nvim"
