@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'fatih/molokai'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'jreybert/vimagit'
     Plug 'lyokha/vim-xkbswitch'
@@ -41,6 +42,11 @@ call plug#end()
     set wrapmargin=80
     set colorcolumn=+1
     syntax on
+    set t_Co=256
+    set background=dark
+    let g:molokai_original = 1
+    let g:rehash256 = 1
+    colorscheme molokai
     filetype plugin on
     filetype indent on
 
@@ -104,7 +110,7 @@ call plug#end()
 " =============================================================================
 " Vim-Airline settings
 " =============================================================================
-    let g:airline_theme='simple'
+    let g:airline_theme='minimalist'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
     if has("gui_running")
