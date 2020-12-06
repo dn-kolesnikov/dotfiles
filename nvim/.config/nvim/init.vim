@@ -13,10 +13,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'fatih/molokai'
     Plug 'editorconfig/editorconfig-vim'
     Plug 'jreybert/vimagit'
-    Plug 'lyokha/vim-xkbswitch'
+    "Plug 'lyokha/vim-xkbswitch'
     Plug 'nvie/vim-flake8'
     Plug 'plytophogy/vim-virtualenv'
-    Plug 'takac/vim-hardtime'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -105,7 +104,7 @@ call plug#end()
 " =============================================================================
 " Enable Hard Time Plugin
 " =============================================================================
-    let g:hardtime_default_on = 0
+"    let g:hardtime_default_on = 0
 
 " =============================================================================
 " Vim-Airline settings
@@ -122,7 +121,7 @@ call plug#end()
 " =============================================================================
 " при выходе в коммандный режим, переключать язык на US
 " =============================================================================
-    let g:XkbSwitchEnabled = 1
+"    let g:XkbSwitchEnabled = 1
 
 " =============================================================================
 " Deoplete plugin
