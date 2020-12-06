@@ -1,0 +1,86 @@
+#!/bin/bash
+#
+# This is a simple kernel hook to populate the systemd-boot entries
+# whenever kernels are added or removed.
+#
+
+################################################################################
+###                               Constants                                  ###
+################################################################################
+
+# The volume where your ROOT (/) resides.
+# eg.'/dev/mapper/myvg-root'
+ROOT_DEVICE_PATH="/dev/nvme0n1p1"
+
+# The PARTUUID of your disk.
+ROOT_DEVICE_PARTUUID=$(blkid -s PARTUUID -o value $ROOT_DEVICE_PATH)
+
+# Any rootflags you wish to set.
+ROOTFLAGS="rw"
+
+################################################################################
+###                               Functions                                  ###
+################################################################################
+
+create_entry() {
+	VERSION=$1
+	SUFFIX=$2
+
+	echo -e "\e[2msystemd-boot\e[0m \e[1;32m${VERSION} -> ${SUFFIX:-"LATEST/NO SUFFIX"}\e[0m"
+	for FILENAME in config initrd.img System.map vmlinuz; do
+		cp "/boot/${FILENAME}-${VERSION}" "/boot/efi/ubuntu/${FILENAME}${SUFFIX:+"-${SUFFIX}"}"
+	done
+
+	for VARIANT in ':quiet' 'recovery:rescue' 'debug:debug'; do
+		VARIANT_SUFFIX="$(echo "${VARIANT}" | cut -d':' -f1)"
+		VARIANT_OPTS="$(echo "${VARIANT}" | cut -d':' -f2)"
+
+		cat << EOF > /boot/efi/loader/entries/ubuntu${SUFFIX:+"-${SUFFIX}"}${VARIANT_SUFFIX:+"-${VARIANT_SUFFIX}"}.conf
+title   Ubuntu${SUFFIX:+" - ${SUFFIX}"}${VARIANT_SUFFIX:+" (${VARIANT_SUFFIX})"}
+linux   /ubuntu/vmlinuz${SUFFIX:+"-${SUFFIX}"}
+initrd  /ubuntu/initrd.img${SUFFIX:+"-${SUFFIX}"}
+options ${ROOT_DEVICE_PARTUUID:+"root=PARTUUID=${ROOT_DEVICE_PARTUUID}"} ${ROOTFLAGS:+"${ROOTFLAGS}"} ${VARIANT_OPTS}
+EOF
+	done
+}
+
+################################################################################
+###                               Main                                       ###
+################################################################################
+
+# Our kernels.
+KERNELS=()
+FIND="find /boot -maxdepth 1 -name 'vmlinuz-*' -type f -print0 | sort -rz"
+while IFS= read -r -u3 -d $'\0' LINE; do
+	KERNEL=$(basename "${LINE}")
+	KERNELS+=("${KERNEL:8}")
+done 3< <(eval "${FIND}")
+
+# There has to be at least one kernel.
+if [ ${#KERNELS[@]} -lt 1 ]; then
+	echo -e "\e[2msystemd-boot\e[0m \e[1;31mNo kernels found.\e[0m"
+	exit 1
+fi
+
+# Perform a nuclear clean to ensure everything is always in perfect
+# sync.
+rm /boot/efi/loader/entries/ubuntu*.conf
+rm -rf /boot/efi/ubuntu
+mkdir /boot/efi/ubuntu
+
+# Copy the latest kernel files to a consistent place so we can keep
+# using the same loader configuration.
+LATEST="${KERNELS[@]:0:1}"
+create_entry $LATEST
+
+# Copy any legacy kernels over too, but maintain their version-based
+# names to avoid collisions.
+if [ ${#KERNELS[@]} -gt 1 ]; then
+	LEGACY=("${KERNELS[@]:1}")
+	for VERSION in "${LEGACY[@]}"; do
+        create_entry $VERSION $VERSION
+	done
+fi
+
+# Success!
+exit 0
