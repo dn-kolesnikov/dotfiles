@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
+    Plug 'rootkiter/vim-hexedit'
 call plug#end()
 
 " =============================================================================
