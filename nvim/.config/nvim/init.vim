@@ -22,6 +22,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
     Plug 'rootkiter/vim-hexedit'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " =============================================================================
