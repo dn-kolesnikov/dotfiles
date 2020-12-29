@@ -1,0 +1,93 @@
+#!/usr/bin/evn bash
+
+# no install recommends and suggests by default
+apt-config dump | grep -we Recommends -e Suggests | sed s/1/0/ | sudo tee /etc/apt/apt.conf.d/99norecommend
+
+apt install --no-install-recommends \
+at-spi2-core \
+apt-transport-https \
+breeze-cursor-theme \
+breeze-gtk-theme \
+breeze-icon-theme \
+build-essential \
+calcurse \
+cmake \
+curl \
+dkms \
+docx2txt \
+dosfstools \
+exfat-fuse \
+exfat-utils \
+exuberant-ctags \
+ffmpeg \
+firefox \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,symbola,inconsolata,paratype,roboto,ubuntu} \
+fzf \
+gawk \
+git \
+golang \
+gstreamer1.0-libav \
+gstreamer1.0-plugins-{bad,base,good,ugly} \
+imagemagick \
+jmtpfs \
+kitty \
+lastpass-cli \
+libnotify-bin \
+lynx \
+mc \
+mediainfo \
+mesa-{va,vdpau,vulkan}-drivers \
+mpv \
+neovim \
+nmap \
+ntfs-3g \
+odt2txt \
+p7zip-full \
+pass \
+pipenv \
+psmisc \
+pulseaudio \
+python3-dev \
+python3-pip \
+software-properties-common \
+stow \
+unrar \
+unzip \
+urlscan \
+usb-modeswitch \
+w3m \
+xdg-user-dirs \
+xdg-utils \
+youtube-dl \
+zathura \
+zathura-djvu \
+zathura-pdf-poppler \
+zathura-ps \
+zip \
+grim \
+mako-notifier \
+slurp \
+sway \
+swayidle \
+swaylock \
+waybar \
+wf-recorder \
+wl-clipboard \
+wofi \
+;
+
+#python3 -m pip install --user msgpack
+#python3 -m pip install --user neovim
+#python3 -m pip install --user powerline-shell
+#python3 -m pip install --user pynvim
+
+###################################################
+#sudo usermod -aG \
+#dialout,\
+#kvm, \
+#lpadmin,\
+#plugdev,\
+#vboxusers,\
+#video \
+#$USER
+

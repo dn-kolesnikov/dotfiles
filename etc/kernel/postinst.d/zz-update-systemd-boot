@@ -10,7 +10,7 @@
 
 # The volume where your ROOT (/) resides.
 # eg.'/dev/mapper/myvg-root'
-ROOT_DEVICE_PATH="/dev/nvme0n1p1"
+ROOT_DEVICE_PATH="/dev/sda1"
 
 # The PARTUUID of your disk.
 ROOT_DEVICE_PARTUUID=$(blkid -s PARTUUID -o value $ROOT_DEVICE_PATH)

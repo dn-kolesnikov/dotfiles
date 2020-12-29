@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Profile file. Runs on login.
 
+[[ $- != *i* ]] && exit
+
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
 export LESS_TERMCAP_me="$(printf '%b' '[0m')"
@@ -15,32 +17,24 @@ export FILE="lf"
 export READER="zathura"
 export TERMINAL="kitty"
 
-if [ $USER ]; then
-	export XDG_CACHE_HOME="/tmp/${USER}/.cache"
-fi
+#if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
+#fi
+
+export XDG_CACHE_HOME="/tmp/${USER}/cache"
 
 # set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*$//')"
-fi
+[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
 
 # set PATH so it includes golang's private bin if it exists
-if [ -d "$HOME/go/bin" ] ; then
-    export PATH="$PATH:$HOME/go/bin"
-fi
-
-if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
-    export GDK_BACKEND=wayland
-    export QT_QPA_PLATFORM=wayland
-    export MOZ_ENABLE_WAYLAND=1
-fi
-
-echo "$0" | grep "bash$" >/dev/null && [ -f "$HOME/.bashrc" ] && source "$HOME/.bashrc"
+[ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
 
 # Modular visual interface for GDB in Python
 # https://github.com/cyrus-and/gdb-dashboard
-[ ! -f "$HOME/.gdbinit" ] && wget -P $HOME git.io/.gdbinit >/dev/null 2>&1
+#[ ! -f "~/.gdbinit" ] && wget -P ~ git.io/.gdbinit >/dev/null 2>&1
 
-# Start graphical server if bspwm not already running.
-#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x bspwm >/dev/null && exec startx
+# Start graphical server if it not already running.
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
 
