@@ -1,3 +1,5 @@
 [user]
 	email = dk.diklab@gmail.com
-	name = Dmitry N. Kolesnikov
+	name = dn-kolesnikov
+[core]
+	editor = nvim
