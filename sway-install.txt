@@ -21,7 +21,7 @@ exfat-utils \
 exuberant-ctags \
 ffmpeg \
 firefox \
-fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,symbola,inconsolata,paratype,roboto,ubuntu} \
+fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,powerline,symbola,inconsolata,paratype,roboto,ubuntu} \
 fzf \
 gawk \
 git \
@@ -78,8 +78,8 @@ wofi \
 
 #python3 -m pip install --user msgpack
 #python3 -m pip install --user neovim
-#python3 -m pip install --user powerline-shell
 #python3 -m pip install --user pynvim
+#go get -u github.com/justjanne/powerline-go
 
 ###################################################
 #sudo usermod -aG \
