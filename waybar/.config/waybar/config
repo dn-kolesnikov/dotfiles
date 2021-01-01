@@ -16,7 +16,7 @@
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+    "height": 21,
 
     "modules-left": [
         "sway/workspaces",
@@ -117,7 +117,7 @@
 
     "sway/window": {
         "format": "{}",
-        "max-length": 120
+        "max-length": 40
     },
 
     "sway/workspaces": {

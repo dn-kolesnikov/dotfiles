@@ -18,9 +18,9 @@ export READER="zathura"
 export TERMINAL="kitty"
 
 #if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
-#export GDK_BACKEND=wayland
-#export QT_QPA_PLATFORM=wayland
-#export MOZ_ENABLE_WAYLAND=1
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export MOZ_ENABLE_WAYLAND=1
 #fi
 
 export XDG_CACHE_HOME="/tmp/${USER}/cache"
@@ -36,5 +36,5 @@ export XDG_CACHE_HOME="/tmp/${USER}/cache"
 #[ ! -f "~/.gdbinit" ] && wget -P ~ git.io/.gdbinit >/dev/null 2>&1
 
 # Start graphical server if it not already running.
-#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
+[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
 
