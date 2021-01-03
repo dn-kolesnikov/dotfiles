@@ -13,20 +13,18 @@ default_border pixel 0
 gaps inner 5
 gaps outer 0
 
+# set font
+font pango:Ubuntu Mono 10
+
 # force floating for all new windows
 for_window [class=".*"] floating enable
 
 # browser pop-ups
 for_window [window_role="pop-up"] floating enable
 
-# set font
-font pango:Ubuntu Mono 10
-
-# terminal emulator
-set $term x-terminal-emulator
-
 # application launcher
-set $menu "wofi -G -I -m --term=$TERM --show run"
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt, border pixel 10
+set $menu "$TERMINAL --class=launcher -e sway-launcher-desktop"
 
 ### Output configuration
 #
@@ -71,11 +69,10 @@ input type:touchpad {
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $TERMINAL
 
     # Start a browser
     bindsym $mod+Shift+b exec $BROWSER
-
 
     # Kill focused window
     bindsym $mod+Shift+q kill
