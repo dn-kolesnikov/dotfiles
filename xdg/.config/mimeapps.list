@@ -1,11 +1,11 @@
 [Default Applications]
 x-scheme-handler/magnet=torrent.desktop;
 x-scheme-handler/mailto=mail.desktop;
-text/plain=text.desktop;
-text/x-shellscript=text.desktop;
+text/plain=nvim.desktop;
+text/x-shellscript=nvim.desktop;
 application/pdf=pdf.desktop;
 image/png=img.desktop;
 image/jpeg=img.desktop;
 image/gif=img.desktop;
 application/rss+xml=rss.desktop
-inode/directory=ranger.desktop
+inode/directory=lf.desktop
