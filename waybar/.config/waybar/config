@@ -16,7 +16,7 @@
     "position": "top",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 21,
+    "height": 20,
 
     "modules-left": [
         "sway/workspaces",
@@ -29,14 +29,11 @@
         "network",
         "memory",
         "cpu",
-        "temperature",
         "custom/keyboard-layout",
         "battery",
         "tray",
-        "clock#date",
-        "clock#time"
+        "clock"
     ],
-
 
     // -------------------------------------------------------------------------
     // Modules
@@ -51,7 +48,7 @@
         // Connected to AC
         "format": "  {icon}  {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -62,15 +59,9 @@
         "tooltip": true
     },
 
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M:%S}",
-        "tooltip": false
-    },
-
-    "clock#date": {
+    "clock": {
       "interval": 10,
-      "format": "  {:%e %b %Y}", // Icon: calendar-alt
+      "format": "  {:%d-%m-%Y   %H:%M}", // Icon: calendar-alt
       "tooltip-format": "{:%e %B %Y}"
     },
 
@@ -88,14 +79,14 @@
       // Interval set only as a fallback, as the value is updated by signal
       "interval": 30,
       "format": "  {}", // Icon: keyboard
-      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+      // Signal sent by Sway key binding
       "signal": 1, // SIGHUP
       "tooltip": false
     },
 
     "memory": {
         "interval": 5,
-        "format": " {}%", // Icon: memory
+        "format": "  {}%", // Icon: memory
         "states": {
             "warning": 70,
             "critical": 90
@@ -123,13 +114,8 @@
     "sway/workspaces": {
         "all-outputs": false,
         "disable-scroll": true,
-        "format": "{icon} {name}",
+        "format": "{icon}  {name}",
         "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
             "urgent": "",
             "focused": "",
             "default": ""
@@ -153,22 +139,22 @@
     //    "on-click": "pavucontrol"
     //},
 
-    "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon}  {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
-    },
+    //"temperature": {
+    //  "critical-threshold": 80,
+    //  "interval": 5,
+    //  "format": "{icon} {temperatureC}°C",
+    //  "format-icons": [
+    //      "", // Icon: temperature-empty
+    //      "", // Icon: temperature-quarter
+    //      "", // Icon: temperature-half
+    //      "", // Icon: temperature-three-quarters
+    //      ""  // Icon: temperature-full
+    //  ],
+    //  "tooltip": true
+    //},
 
     "tray": {
-        "icon-size": 21,
+        "icon-size": 20,
         "spacing": 10
     }
 
