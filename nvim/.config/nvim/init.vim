@@ -39,8 +39,8 @@ call plug#end()
     set encoding=utf-8
     set number relativenumber
     set wrap linebreak nolist
-    set textwidth=80
-    set wrapmargin=80
+    set textwidth=120
+    set wrapmargin=120
     set colorcolumn=+1
     syntax on
     set t_Co=256
