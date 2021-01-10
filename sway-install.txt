@@ -63,6 +63,7 @@ zathura \
 zathura-djvu \
 zathura-pdf-poppler \
 zathura-ps \
+qt5ct \
 zip \
 grim \
 mako-notifier \
