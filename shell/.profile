@@ -15,7 +15,7 @@ export BROWSER="firefox"
 export EDITOR="nvim"
 export FILE="lf"
 export READER="zathura"
-export TERMINAL="alacritty"
+export TERMINAL="kitty"
 
 #if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
 export GDK_BACKEND=wayland
