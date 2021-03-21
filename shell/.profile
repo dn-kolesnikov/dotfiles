@@ -48,6 +48,6 @@ export XDG_VIDEOS_DIR="$HOME/videos"
 #[ ! -f "~/.gdbinit" ] && wget -P ~ git.io/.gdbinit >/dev/null 2>&1
 
 # Start graphical server if it not already running.
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
+#[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
 
 

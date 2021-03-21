@@ -31,7 +31,6 @@ gstreamer1.0-plugins-{bad,base,good,ugly} \
 imagemagick \
 jmtpfs \
 kitty \
-lastpass-cli \
 libnotify-bin \
 lynx \
 mc \
