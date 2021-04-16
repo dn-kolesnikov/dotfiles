@@ -76,9 +76,7 @@ wl-clipboard \
 wofi \
 ;
 
-#python3 -m pip install --user msgpack
-#python3 -m pip install --user neovim
-#python3 -m pip install --user pynvim
+#python3 -m venv $HOME/.local/share/nvim/venv/python3 && source $HOME/.local/share/nvim/venv/python3/bin/activate && pip3 install neovim pynvim jedi msgpack
 #go get -u github.com/justjanne/powerline-go
 
 ###################################################

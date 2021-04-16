@@ -9,20 +9,22 @@ endif
 call plug#begin('~/.config/nvim/plugged')
     Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+    Plug 'deoplete-plugins/deoplete-jedi'
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     Plug 'fatih/molokai'
-    Plug 'editorconfig/editorconfig-vim'
-    Plug 'jreybert/vimagit'
     "Plug 'lyokha/vim-xkbswitch'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+    Plug 'jiangmiao/auto-pairs'
+    Plug 'jreybert/vimagit'
     Plug 'nvie/vim-flake8'
-    Plug 'plytophogy/vim-virtualenv'
+    Plug 'rootkiter/vim-hexedit'
+    Plug 'rust-lang/rust.vim'
+    Plug 'timbedard/vim-envelop'
     Plug 'tpope/vim-commentary'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'rootkiter/vim-hexedit'
-    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " =============================================================================
@@ -42,14 +44,14 @@ call plug#end()
     set textwidth=120
     set wrapmargin=120
     set colorcolumn=+1
-    syntax on
-    set t_Co=256
-    set background=dark
-    let g:molokai_original = 1
-    let g:rehash256 = 1
-    colorscheme molokai
     filetype plugin on
     filetype indent on
+
+    syntax on
+    colorscheme molokai
+    let g:molokai_original = 1
+    let g:rehash256 = 1
+    set background=dark
 
 " Set command-line completion mode
     set wildmode=list:longest,full
@@ -63,22 +65,9 @@ call plug#end()
 " unlike vim defaults.
     set splitbelow splitright
 
-    set backup
-    set backupdir=/tmp/nvim/backup              " where to put backup files
-    set directory=/tmp/nvim/swap                " where to put swap files
-    let g:SESSION_DIR='/tmp/nvim/sessions'      " where to keep sessions
-
-    if finddir(&backupdir) == ''
-        silent call mkdir(&backupdir, "p")
-    endif
-
-    if finddir(&directory) == ''
-        silent call mkdir(&directory, "p")
-    endif
-
-    if finddir(g:SESSION_DIR) == ''
-        silent call mkdir(g:SESSION_DIR, "p")
-    endif
+    set nobackup
+    set noswapfile
+    set nowritebackup
 
 " =============================================================================
 " Netrw file browser
@@ -96,7 +85,7 @@ call plug#end()
 " =============================================================================
 " Nvim provider support
 " =============================================================================
-    " To disable Python 2 support
+   " To disable Python 2 support
     let g:loaded_python_provider = 0
     " To disable Ruby support
     let g:loaded_ruby_provider = 0
