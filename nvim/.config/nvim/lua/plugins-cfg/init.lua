@@ -1,4 +1,4 @@
--- plugin manager
+-- plugin manager started 1st
 require('plugins-cfg.pm')
 --
 require('plugins-cfg.autopairs')
@@ -9,7 +9,7 @@ require('plugins-cfg.dap')
 require('plugins-cfg.explorer')
 require('plugins-cfg.golang')
 require('plugins-cfg.lsp')
-require('plugins-cfg.lspsaga')
+--require('plugins-cfg.lspsaga')
 require('plugins-cfg.lualine')
 require('plugins-cfg.telescope')
 require('plugins-cfg.theme')
