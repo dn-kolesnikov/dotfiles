@@ -12,9 +12,26 @@ shopt -s autocd
 # Infinite history.
 HISTSIZE= HISTFILESIZE=
 
+# ignore duplicate commands
+HISTCONTROL=erasedups:ignoreboth
+PROMPT_COMMAND="history -n; history -w; history -c; history -r"
+tac "$HISTFILE" | awk '!a[$0]++' | tac > /tmp/t; mv /tmp/t "$HISTFILE"
+
+# append to the history instead of overwriting (good for multiple connections)
+shopt -s histappend
+
 # Source aliases
 if [ -f $HOME/.bash_aliases ]; then
     . $HOME/.bash_aliases
+fi
+
+# command PROMPT
+function _update_ps1() {
+    PS1="$($HOME/go/bin/powerline-go -error $?)"
+}
+
+if [ "$TERM" != "linux" ] && [ -f "$HOME/go/bin/powerline-go" ]; then
+    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
 # enable bash completion in interactive shells
@@ -26,18 +43,4 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# powerline shell PS1
-#function _update_ps1() {
-#    PS1=$(powerline-shell $?)
-#}
-#if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _update_ps1 ]]; then
-#    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-#fi
-
-function _update_ps1() {
-    PS1="$($HOME/go/bin/powerline-go -error $?)"
-}
-
-if [ "$TERM" != "linux" ] && [ -f "$HOME/go/bin/powerline-go" ]; then
-    PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
+complete -C /home/dk/go/bin/gocomplete go

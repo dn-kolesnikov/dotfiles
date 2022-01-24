@@ -3,3 +3,5 @@
 	name = dn-kolesnikov
 [core]
 	editor = nvim
+[init]
+	defaultBranch = main
