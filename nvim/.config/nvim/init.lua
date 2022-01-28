@@ -63,7 +63,20 @@ vim.opt.wrap = false										-- disable line wrap
 
 -- plugin settings
 
-require('plugins-cfg')
+-- plugin manager started 1st
+require('dk.plugin-manager')
+--
+require('dk.autosave')
+require('dk.dap')
+require('dk.explorer')
+require('dk.golang')
+require('dk.lsp')
+require('dk.mini')
+require('dk.null-ls')
+require('dk.telescope')
+require('dk.theme')
+require('dk.toggleterm')
+require('dk.treesitter')
 
 -- hide line numbers, statusline in specific buffers!
 vim.cmd(
@@ -75,4 +88,12 @@ vim.cmd(
 	false
 )
 
-print('All plugins loaded!')
+-- Russian keyboard mappings
+local langmap_keys = {
+	'ёЁ;`~', '№;#',
+	'йЙ;qQ', 'цЦ;wW', 'уУ;eE', 'кК;rR', 'еЕ;tT', 'нН;yY', 'гГ;uU', 'шШ;iI', 'щЩ;oO', 'зЗ;pP', 'хХ;[{', 'ъЪ;]}',
+	'фФ;aA', 'ыЫ;sS', 'вВ;dD', 'аА;fF', 'пП;gG', 'рР;hH', 'оО;jJ', 'лЛ;kK', 'дД;lL', [[жЖ;\;:]], [[эЭ;'\"]],
+	'яЯ;zZ', 'чЧ;xX', 'сС;cC', 'мМ;vV', 'иИ;bB', 'тТ;nN', 'ьЬ;mM', [[бБ;\,<]], 'юЮ;.>',
+}
+vim.opt.langmap = table.concat(langmap_keys, ',')
+
