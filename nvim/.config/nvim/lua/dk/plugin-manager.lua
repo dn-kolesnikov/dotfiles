@@ -23,13 +23,13 @@ require('paq') {
 	{'echasnovski/mini.nvim'},
 
 	-- a minimal implementation of Golang delevelopment plugin
-	{'crispgm/nvim-go'},
-
-	-- Golang development environment for Neovim
-	--{'WhoIsSethDaniel/goldsmith.nvim'},
+	--{'crispgm/nvim-go'},
 
 	-- A modern go neovim plugin based on treesitter, nvim-lsp and dap debugger.
-	--{'ray-x/go.nvim'},
+	{'ray-x/go.nvim'},
+	-- float term, codeaction and codelens gui support'
+	{'ray-x/guihua.lua'},
+
 	-- nvim-go is a Go development plugin for Neovim written in pure Go.
 	--{'zchee/nvim-go', run = 'make'},
 
