@@ -1,13 +1,25 @@
 -- plugin manager
-local pm_path = string.format("%s/site/pack/paqs/start/paq-nvim", vim.fn.stdpath("data"))
 
-if vim.fn.empty(vim.fn.glob(pm_path)) > 0 then
-	vim.fn.system({"git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", pm_path})
-	vim.cmd([[packadd paq]])
-	vim.cmd([[PaqInstall]])
+-- Automatically install Paq
+local install_path = string.format("%s/site/pack/paqs/start/paq-nvim", vim.fn.stdpath("data"))
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+	PAQ_BOOTSTRAP = vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/savq/paq-nvim.git",
+		install_path
+	})
 end
 
-require("paq") {
+-- Use a protected call so we don't error out on first use
+local status_ok, paq = pcall(require, "paq")
+if not status_ok then
+	return
+end
+
+paq {
 	-- Paq plugin manager
 	{"savq/paq-nvim"},
 
@@ -88,3 +100,10 @@ require("paq") {
 	{"navarasu/onedark.nvim"},
 
 }
+
+-- Automatically set up your configuration after cloning packer.nvim
+-- Put this at the end after all plugins
+if PAQ_BOOTSTRAP then
+	paq:sync()
+end
+

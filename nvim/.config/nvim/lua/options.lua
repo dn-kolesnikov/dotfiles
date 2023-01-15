@@ -32,19 +32,28 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
 -- global options
-vim.opt.backup = false
-vim.opt.clipboard = "unnamedplus"						-- use system wide clipboard
-vim.opt.colorcolumn = "+1"
-vim.opt.completeopt = {"menu", "menuone", "noselect"}	-- completion options
-vim.opt.cursorline = true								-- highlight cursor line
-vim.opt.hlsearch = false								-- no highlight all maches
-vim.opt.mouse = "a"										-- use mouse for VISUAL-mode
-vim.opt.number = true									-- show number line
-vim.opt.relativenumber = true							-- relative line numbers
-vim.opt.spelllang = {"en", "ru"}						-- list languages for spelling
-vim.opt.splitbelow = true								-- put new windows below current
-vim.opt.splitright = true								-- put new windows right of current
-vim.opt.swapfile = false								-- don"t use a swapfile for the buffer
-vim.opt.textwidth = 120									-- maximum width of text
-vim.opt.undofile = true; vim.bo.undofile = true			-- undo/redo enable
-vim.opt.wrap = false									-- disable line wrap
+local options = {
+	backup = false, -- no backup made
+	clipboard = "unnamedplus", -- use system wide clipboard
+	cmdheight = 2, -- more space in the neovim command line for displaing messages
+	colorcolumn = "+1", -- highlight column after 'textwidth'
+	completeopt = { "menu", "menuone", "noselect" }, -- completion options
+	cursorline = true, -- highlight cursor line
+	hlsearch = false, -- no highlight all maches
+	ignorecase = true, -- ingore case in search patterns
+	laststatus = 3, -- always and ONLY the last window has a status line
+	mouse = "a", -- use mouse for VISUAL-mode
+	number = true, -- show number line
+	relativenumber = true, -- relative line numbers
+	spelllang = { "en", "ru" }, -- list languages for spelling
+	splitbelow = true, -- put new windows below current
+	splitright = true, -- put new windows right of current
+	swapfile = false, -- don"t use a swapfile for the buffer
+	textwidth = 120, -- maximum width of text
+	undofile = true, -- undo/redo enable
+	wrap = false, -- disable line wrap
+}
+
+for k, v in pairs(options) do
+	vim.opt[k] = v
+end

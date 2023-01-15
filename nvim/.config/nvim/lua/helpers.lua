@@ -1,5 +1,5 @@
-local ok, plenary_reload = pcall(require, "plenary.reload")
-if not ok then
+local status_ok, plenary_reload = pcall(require, "plenary.reload")
+if not status_ok then
   reloader = require
 else
   reloader = plenary_reload.reload_module
