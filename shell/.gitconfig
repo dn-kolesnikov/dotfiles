@@ -1,7 +1,9 @@
 [user]
-	email = dk.diklab@gmail.com
+	email = dmitry@kolesnikov.top
 	name = dn-kolesnikov
 [core]
 	editor = nvim
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
