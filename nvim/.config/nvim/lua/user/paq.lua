@@ -101,7 +101,7 @@ paq {
 
 }
 
--- Automatically set up your configuration after cloning packer.nvim
+-- Automatically set up your configuration after cloning Paq
 -- Put this at the end after all plugins
 if PAQ_BOOTSTRAP then
 	paq:sync()

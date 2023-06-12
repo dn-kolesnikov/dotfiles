@@ -54,8 +54,11 @@ local custom_on_attach = function(client, bufnr)
 end
 
 local servers = {
-	"gopls",
 	"ccls",
+	"cssls",
+	"gopls",
+	"html",
+	"vuels",
 }
 
 for _, server in ipairs(servers) do
@@ -65,7 +68,7 @@ for _, server in ipairs(servers) do
 	})
 end
 
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	on_attach = custom_on_attach,
 	capabilities = custom_capabilities,
 	settings = {

@@ -43,3 +43,5 @@ if ! shopt -oq posix; then
 fi
 
 complete -C /home/dk/go/bin/gocomplete go
+
+alias luamake=/home/dk/projects/lua-language-server/3rd/luamake/luamake
