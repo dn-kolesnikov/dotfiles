@@ -58,7 +58,7 @@ local servers = {
 	"cssls",
 	"gopls",
 	"html",
-	"vuels",
+	"volar",
 }
 
 for _, server in ipairs(servers) do
