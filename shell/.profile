@@ -39,9 +39,10 @@ export TERMINAL="kitty"
 
 # set PATH so it includes user's private bin if it exists
 [ -d "$HOME/bin" ] && export PATH="$PATH:$HOME/bin"
-[ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
 [ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
+[ -d "/usr/local/go/bin" ] && export PATH="$PATH:/usr/local/go/bin"
+[ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
 
 # Modular visual interface for GDB in Python
 # https://github.com/cyrus-and/gdb-dashboard

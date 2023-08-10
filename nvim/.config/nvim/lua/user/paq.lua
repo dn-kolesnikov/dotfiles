@@ -99,6 +99,8 @@ paq {
 	-- OneDark color theme
 	{"navarasu/onedark.nvim"},
 
+	-- free, ultrafast Copilot alternative for Vim and Neovim
+	{"Exafunction/codeium.vim"},
 }
 
 -- Automatically set up your configuration after cloning Paq
