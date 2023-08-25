@@ -96,6 +96,9 @@ paq {
 	-- a neovim plugin to persist and toggle multiple terminals during an editing session
 	{"akinsho/toggleterm.nvim"},
 
+	-- the multicursor plugin for neovim extends
+	{"smoka7/multicursors.nvim"},
+
 	-- OneDark color theme
 	{"navarasu/onedark.nvim"},
 
