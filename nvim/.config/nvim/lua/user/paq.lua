@@ -1,25 +1,35 @@
 -- plugin manager
 
 -- Automatically install Paq
-local install_path = string.format("%s/site/pack/paqs/start/paq-nvim", vim.fn.stdpath("data"))
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-	PAQ_BOOTSTRAP = vim.fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/savq/paq-nvim.git",
-		install_path
-	})
+local function clone_paq()
+	local path = string.format("%s/site/pack/paqs/start/paq-nvim", vim.fn.stdpath("data"))
+	local is_installed = vim.fn.empty(vim.fn.glob(path)) == 0
+	if not is_installed then
+		vim.fn.system({
+			"git",
+			"clone",
+			"--depth=1",
+			"https://github.com/savq/paq-nvim.git",
+			path
+		})
+		return true
+	end
 end
 
--- Use a protected call so we don't error out on first use
-local status_ok, paq = pcall(require, "paq")
-if not status_ok then
-	return
+local function bootstrap_paq(packages)
+	local first_install = clone_paq()
+	vim.cmd.packadd("paq-nvim")
+	local paq = require("paq")
+	if first_install then
+		vim.notify("Installing plugins... If prompted, hit Enter to continue.")
+	end
+	-- Read and install packages
+	paq(packages)
+	paq.install()
 end
 
-paq {
+  -- Call helper function
+bootstrap_paq {
 	-- Paq plugin manager
 	{"savq/paq-nvim"},
 
@@ -105,10 +115,4 @@ paq {
 	-- free, ultrafast Copilot alternative for Vim and Neovim
 	{"Exafunction/codeium.vim"},
 }
-
--- Automatically set up your configuration after cloning Paq
--- Put this at the end after all plugins
-if PAQ_BOOTSTRAP then
-	paq:sync()
-end
 

@@ -2,7 +2,6 @@ require("user.paq")
 
 -- require("user.null-ls")
 require("user.autosave")
-require("user.codeium")
 require("user.dap")
 require("user.explorer")
 require("user.golang")
