@@ -1,16 +1,6 @@
 #!/usr/bin/env bash
 # Profile file. Runs on login.
 
-#[[ $- != *i* ]] && exit
-
-export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
-export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"
-export LESS_TERMCAP_me="$(printf '%b' '[0m')"
-export LESS_TERMCAP_so="$(printf '%b' '[01;44;33m')"
-export LESS_TERMCAP_se="$(printf '%b' '[0m')"
-export LESS_TERMCAP_us="$(printf '%b' '[1;32m')"
-export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
-
 export BROWSER="yandex-browser"
 export EDITOR="nvim"
 export FILE="lf"
@@ -41,12 +31,8 @@ export TERMINAL="kitty"
 [ -d "$HOME/bin" ] && export PATH="$PATH:$HOME/bin"
 [ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
 [ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
-[ -d "/usr/local/go/bin" ] && export PATH="$PATH:/usr/local/go/bin"
 [ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
-
-# Modular visual interface for GDB in Python
-# https://github.com/cyrus-and/gdb-dashboard
-#[ ! -f "~/.gdbinit" ] && wget -P ~ git.io/.gdbinit >/dev/null 2>&1
+[ -d "/usr/local/go/bin" ] && export PATH="$PATH:/usr/local/go/bin"
 
 # Start graphical server if it not already running.
 #[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway

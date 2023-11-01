@@ -67,7 +67,7 @@ bootstrap_paq {
 	{"dn-kolesnikov/tinygo-nvim"},
 
 	-- treesitter configurations and abstraction layer
-	{"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
+	{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 	-- create your own textobjects using tree-sitter queries
 	{"nvim-treesitter/nvim-treesitter-textobjects"},
 	-- refactoring using tree-sitter
