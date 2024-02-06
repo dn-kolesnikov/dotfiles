@@ -40,7 +40,7 @@ bootstrap_paq {
 	{"nvim-lua/plenary.nvim"},
 
 	-- an implementation of the Popup API from Vim in Nvim
-	--{"nvim-lua/popup.nvim"},
+	{"nvim-lua/popup.nvim"},
 
 	-- float term, codeaction and codelens gui support
 	{"ray-x/guihua.lua"},
@@ -58,7 +58,7 @@ bootstrap_paq {
 	{"saadparwaiz1/cmp_luasnip"},
 
 	-- Minimalistic plugin for Go development in Neovim written in Lua.
-	{"olexsmir/gopher.nvim"},
+	-- {"olexsmir/gopher.nvim"},
 
 	-- A modern go neovim plugin based on treesitter, nvim-lsp and dap debugger.
 	{"ray-x/go.nvim"},

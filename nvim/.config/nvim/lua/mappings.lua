@@ -21,14 +21,7 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 
 -- Go to tab by number
-vim.keymap.set({"n", "i", "v"}, "<leader>1", "<cmd>1bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>2", "<cmd>2bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>3", "<cmd>3bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>4", "<cmd>4bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>5", "<cmd>5bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>6", "<cmd>6bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>7", "<cmd>7bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>8", "<cmd>8bnext<cr>")
-vim.keymap.set({"n", "i", "v"}, "<leader>9", "<cmd>9bnext<cr>")
+vim.keymap.set({"n", "i", "v"}, "<leader>1", "<cmd>bfirst<cr>")
 vim.keymap.set({"n", "i", "v"}, "<leader>0", "<cmd>blast<cr>")
+vim.keymap.set({"n", "i", "v"}, "<leader><tab>", "<cmd>bnext<cr>")
 
