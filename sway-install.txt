@@ -20,7 +20,6 @@ exfat-fuse \
 exfat-utils \
 exuberant-ctags \
 ffmpeg \
-firefox \
 fonts-{cantarell,dejavu-core,dejavu-extra,emojione,firacode,font-awesome,hack,liberation,noto-color-emoji,powerline,symbola,inconsolata,paratype,roboto,ubuntu} \
 fzf \
 gawk \

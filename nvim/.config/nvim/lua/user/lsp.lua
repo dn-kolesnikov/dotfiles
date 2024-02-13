@@ -28,19 +28,19 @@ nvim_cmp.setup({
 		{ name = "buffer" },
 	})
 })
-local custom_capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+local capabilities_custom = require("cmp_nvim_lsp").default_capabilities()
 
 -- LSP config
 local lspconfig = require("lspconfig")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local custom_on_attach = function(client, bufnr)
+local on_attach_custom = function(_, bufnr)
 	-- Enable completion triggered by <c-x><c-o>
-	vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
+	vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 	-- Mappings.
-	local bufopts = { noremap=true, silent=true, buffer=bufnr }
+	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -63,27 +63,28 @@ local servers = {
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
-		on_attach = custom_on_attach,
-		capabilities = custom_capabilities,
+		on_attach = on_attach_custom,
+		capabilities = capabilities_custom,
 	})
 end
 
 lspconfig["lua_ls"].setup({
-	on_attach = custom_on_attach,
-	capabilities = custom_capabilities,
+	on_attach = on_attach_custom,
+	capabilities = capabilities_custom,
 	settings = {
 		Lua = {
+			-- Tell the language server which version of Lua you"re using
+			-- (most likely LuaJIT in the case of Neovim)
 			runtime = {
-				-- Tell the language server which version of Lua you"re using (most likely LuaJIT in the case of Neovim)
 				version = "LuaJIT",
 			},
+			-- Get the language server to recognize the `vim` global
 			diagnostics = {
-				-- Get the language server to recognize the `vim` global
-				globals = {"vim"},
+				globals = { "vim" },
 			},
+			-- Make the server aware of Neovim runtime files
 			workspace = {
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
+				library = vim.api.nvim_get_runtime_file("/tmp", true),
 			},
 			-- Do not send telemetry data containing a randomized but unique identifier
 			telemetry = {
@@ -92,4 +93,3 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
-
