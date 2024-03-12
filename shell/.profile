@@ -37,3 +37,5 @@ export TERMINAL="kitty"
 # Start graphical server if it not already running.
 #[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x sway >/dev/null && exec sway
 
+# For Cisco AnyConnect Login to work
+export WEBKIT_DISABLE_DMABUF_RENDERER=1

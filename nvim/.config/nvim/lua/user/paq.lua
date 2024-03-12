@@ -42,9 +42,6 @@ bootstrap_paq {
 	-- an implementation of the Popup API from Vim in Nvim
 	{"nvim-lua/popup.nvim"},
 
-	-- float term, codeaction and codelens gui support
-	{"ray-x/guihua.lua"},
-
 	-- Collection of minimal Lua modules to improve Neovim
 	{"echasnovski/mini.nvim"},
 
@@ -57,11 +54,10 @@ bootstrap_paq {
 	{"L3MON4D3/LuaSnip"},
 	{"saadparwaiz1/cmp_luasnip"},
 
-	-- Minimalistic plugin for Go development in Neovim written in Lua.
-	-- {"olexsmir/gopher.nvim"},
-
 	-- A modern go neovim plugin based on treesitter, nvim-lsp and dap debugger.
 	{"ray-x/go.nvim"},
+	-- float term, codeaction and codelens gui support
+	{"ray-x/guihua.lua"},
 
 	-- This is a simple extension to add TinyGo support to Neovim.
 	{"dn-kolesnikov/tinygo-nvim"},
@@ -101,7 +97,7 @@ bootstrap_paq {
 	{"editorconfig/editorconfig-vim"},
 
 	-- use Neovim as a language server to inject LSP diagnostics, code actions, and more
-	{"jose-elias-alvarez/null-ls.nvim"},
+	-- {"jose-elias-alvarez/null-ls.nvim"},
 
 	-- a neovim plugin to persist and toggle multiple terminals during an editing session
 	{"akinsho/toggleterm.nvim"},

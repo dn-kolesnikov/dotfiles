@@ -6,4 +6,11 @@ end
 nvim_go.setup()
 
 -- Run gofmt + goimport on save
-vim.api.nvim_exec([[ autocmd BufWritePre *.go :silent! lua require('go.format').goimport() ]], false)
+local format_sync_grp = vim.api.nvim_create_augroup("GoImport", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*.go",
+	callback = function()
+		require('go.format').goimport()
+	end,
+	group = format_sync_grp,
+})

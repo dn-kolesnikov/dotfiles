@@ -25,3 +25,4 @@ vim.keymap.set({"n", "i", "v"}, "<leader>1", "<cmd>bfirst<cr>")
 vim.keymap.set({"n", "i", "v"}, "<leader>0", "<cmd>blast<cr>")
 vim.keymap.set({"n", "i", "v"}, "<leader><tab>", "<cmd>bnext<cr>")
 
+vim.keymap.set({"n", "i", "v"}, "<leader>e", "<cmd>NvimTreeToggle<cr>")

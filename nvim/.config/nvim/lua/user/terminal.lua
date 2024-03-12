@@ -27,14 +27,14 @@ toggleterm.setup({
 })
 
 function _G.set_terminal_keymaps()
-	local bufopts = { noremap=true, silent=true }
-	vim.keymap.set('t', '<esc>',	[[<C-\><C-n>]], bufopts)
-	vim.keymap.set('t', 'kj',		[[<C-\><C-n>]], bufopts)
-	vim.keymap.set('t', '<C-h>',	[[<Cmd>wincmd h<CR>]], bufopts)
-	vim.keymap.set('t', '<C-j>',	[[<Cmd>wincmd j<CR>]], bufopts)
-	vim.keymap.set('t', '<C-k>',	[[<Cmd>wincmd k<CR>]], bufopts)
-	vim.keymap.set('t', '<C-l>',	[[<Cmd>wincmd l<CR>]], bufopts)
-	vim.keymap.set('t', '<C-w>',	[[<C-\><C-n><C-w>]], bufopts)
+	local bufopts = { noremap = true, silent = true }
+	vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], bufopts)
+	vim.keymap.set('t', 'kj', [[<C-\><C-n>]], bufopts)
+	vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], bufopts)
+	vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], bufopts)
+	vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], bufopts)
+	vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], bufopts)
+	vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], bufopts)
 end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
@@ -44,11 +44,10 @@ local Terminal = require("toggleterm.terminal").Terminal
 
 local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 function _LAZYGIT_TOGGLE()
- lazygit:toggle()
+	lazygit:toggle()
 end
 
 local python = Terminal:new({ cmd = "python3", hidden = true })
 function _PYTHON_TOGGLE()
- python:toggle()
+	python:toggle()
 end
-
