@@ -1,6 +1,5 @@
 require("user.paq")
 
--- require("user.null-ls")
 require("user.autosave")
 require("user.dap")
 require("user.nvimtree")

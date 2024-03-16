@@ -86,18 +86,15 @@ bootstrap_paq {
 	{"nvim-telescope/telescope-media-files.nvim"},
 
 	-- for file icons
-	{"kyazdani42/nvim-web-devicons"},
+	{"nvim-tree/nvim-web-devicons"},
 	-- file explorer
-	{"kyazdani42/nvim-tree.lua"},
+	{"nvim-tree/nvim-tree.lua"},
 
 	-- auto save buffer
 	{"pocco81/auto-save.nvim"},
 
 	-- EditorConfig support
 	{"editorconfig/editorconfig-vim"},
-
-	-- use Neovim as a language server to inject LSP diagnostics, code actions, and more
-	-- {"jose-elias-alvarez/null-ls.nvim"},
 
 	-- a neovim plugin to persist and toggle multiple terminals during an editing session
 	{"akinsho/toggleterm.nvim"},

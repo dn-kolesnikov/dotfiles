@@ -5,9 +5,5 @@ if not status_ok then
 end
 
 -- enable tree-sitter fo all language modules
-treesitter.setup({
-	highlight = {
-		enable = true,
-	},
-})
+treesitter.setup()
 

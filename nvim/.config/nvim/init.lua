@@ -1,8 +1,6 @@
--- Helper function
-require("helpers")
 -- All non plugin related (NeoVim) options
 require("options")
--- Plugin management via Paq
+-- Plugin management
 require("plugins")
 -- Vim mappings
 require("mappings")
