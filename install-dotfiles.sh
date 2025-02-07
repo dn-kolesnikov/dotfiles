@@ -9,6 +9,11 @@ mkdir -p ~/.config/waybar
 mkdir -p ~/.config/zathura
 mkdir -p ~/.local/bin
 mkdir -p ~/go/{bin,src,pkg}
+mkdir -p ~/.tmux
+
+if [ ! -f /usr/bin/stow ]; then
+	sudo apt install -y stow
+fi
 
 stow -v -t ~ `ls -d */`
 

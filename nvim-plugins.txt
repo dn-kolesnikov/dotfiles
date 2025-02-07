@@ -1,0 +1,5 @@
+# for rest.nvim plugin
+sudo apt install luarocks
+sudo luarocks install xml2lua
+sudo luarocks install mimetypes
+sudo luarocks install fidget.nvim

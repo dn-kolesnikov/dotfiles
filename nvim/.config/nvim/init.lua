@@ -1,10 +1,13 @@
--- Helper function
-require("helpers")
--- All non plugin related (NeoVim) options
-require("options")
--- Plugin management via Paq
-require("plugins")
--- Vim mappings
-require("mappings")
--- NeoVim autocommands/autogroups
-require("autocmd")
+-- @param name module
+local function safeRequire(module)
+	local ok, loadedModule = pcall(require, module)
+	if ok then
+		return loadedModule
+	end
+	print("Error loading " .. module)
+end
+
+safeRequire("core.options")
+safeRequire("core.mappings")
+safeRequire("core.autocmds")
+safeRequire("core.bootstrap")

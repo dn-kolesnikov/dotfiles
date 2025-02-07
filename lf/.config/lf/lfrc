@@ -63,6 +63,7 @@ map p paste
 map x cut
 map y copy
 map <enter> open
+map o open
 map R reload
 map mf mkfile
 map md mkdir
@@ -70,7 +71,7 @@ map C clear
 
 # Movement
 map gh cd ~
-map gP cd ~/projects
+map gpm cd ~/projects/mts
 map gc cd ~/.config
 map gs cd ~/.local/bin
 map gt cd ~/.local/share/Trash/files
