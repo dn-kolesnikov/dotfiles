@@ -122,7 +122,7 @@ export TERMINAL="kitty"
 alias fullupgrade="sudo apt update && sudo apt full-upgrade -y; flatpak update -y"
 alias mvi="mpv --config-dir=$HOME/.config/mvi"
 alias curl="curl --proto '=https' --tlsv1.2"
-
+alias copy2clipboard="xclip -sel clip"
 
 export GOPRIVATE=gitlab.services.mts.ru
 

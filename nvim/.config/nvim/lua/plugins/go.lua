@@ -36,7 +36,15 @@ return {
 
 		lsp_cfg = true, -- Включить конфигурацию LSP
 		lsp_gofumpt = true, -- Использовать gofumpt для форматирования
-
+		lsp_keymaps = false,
+		-- lsp_diag_virtual_text = { space = 0, prefix = "■" },
+		-- lsp_diag_signs = true,
+		lsp_diag_update_in_insert = false,
+		lsp_document_formatting = true,
+		lsp_inlay_hints = {
+			enable = true,
+			style = 'eol',
+		},
 		inlay_hints = { -- Настройки inlay hints
 			enabled = true, -- Включить inlay hints
 			only_current_line = false,
@@ -45,7 +53,17 @@ return {
 			parameter_hints = true,
 			other_hints = true,
 		},
+
 		test_runner = "go", -- Использовать `go test` для тестов
 		verbose = false, -- Отключить вывод отладочной информации
+		gocoverage_sign = '│',
+		gocoverage_highlight = 'Comment',
+		gocoverage_set_signs = true,
+		gocoverage_show_summary = true,
+		gocoverage_show_report = true,
+	},
+	keys = {
+		{ '<leader>tc', '<cmd>GoCoverage<cr>',      { desc = 'Run test coverage' } },
+		{ '<leader>tr', '<cmd>GoCoverageClear<cr>', { desc = 'Clear test coverage' } },
 	},
 }

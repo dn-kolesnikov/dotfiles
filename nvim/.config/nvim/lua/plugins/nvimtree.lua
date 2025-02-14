@@ -7,6 +7,7 @@ return {
 	opts = {
 		filters = {
 			dotfiles = false,
+			git_ignored = false,
 		},
 		disable_netrw = true,
 		hijack_cursor = true,
