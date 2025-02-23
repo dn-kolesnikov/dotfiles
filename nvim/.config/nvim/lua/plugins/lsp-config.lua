@@ -83,7 +83,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			"<cmd>Telescope diagnostics<cr>",
 			"Show diagnostics in a Telescope"
 		)
-	end
+	end,
 })
 
 return {
@@ -135,13 +135,6 @@ return {
 				pbls = {}, -- Protobuf
 				sqls = {}, -- SQL
 				taplo = {}, -- TOML
-
-				-- vacuum = { -- OpenAPI (YAML/JSON)
-				-- 	filetypes = {
-				-- 		"yaml",
-				-- 		"json",
-				-- 	},
-				-- },
 
 				jsonls = { -- JSON
 					filetypes = {

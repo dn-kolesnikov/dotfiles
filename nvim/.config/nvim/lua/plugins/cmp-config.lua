@@ -8,6 +8,7 @@ return {
 		"hrsh7th/cmp-cmdline", -- Автодополнение командной строки
 		"saadparwaiz1/cmp_luasnip", -- Интеграция с LuaSnip
 		"L3MON4D3/LuaSnip", -- Сниппеты
+		"zbirenbaum/copilot-cmp", -- GitHub Copilot
 	},
 	event = "InsertEnter",
 	config = function()
@@ -25,11 +26,12 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", keyword_length = 1 }, -- Источник для LSP
-				{ name = "luasnip",  keyword_length = 2 }, -- Источник для сниппетов
-				{ name = "buffer",   keyword_length = 3 }, -- Автодополнение из буфера
-				{ name = "path" }, -- Автодополнение путей
-				{ name = "cmdline" }, -- Автодополнение командной строки
+				{ name = "copilot",  group_index = 2, keyword_length = 1 }, -- Источник для Copilot
+				{ name = "nvim_lsp", group_index = 2, keyword_length = 1 }, -- Источник для LSP
+				{ name = "luasnip",  group_index = 2, keyword_length = 2 }, -- Источник для сниппетов
+				{ name = "buffer",   group_index = 2, keyword_length = 3 }, -- Автодополнение из буфера
+				{ name = "path" },              -- Автодополнение путей
+				{ name = "cmdline" },           -- Автодополнение командной строки
 			}),
 			window = {
 				documentation = cmp.config.window.bordered()
