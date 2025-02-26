@@ -1,8 +1,9 @@
 return {
-	-- "zbirenbaum/copilot.lua",
-	-- event = "BufEnter",
-	-- opts = {},
+	"zbirenbaum/copilot.lua",
+	event = "BufEnter",
+	opts = {},
 }
+-- Hello copilot
 
 -- return {
 -- 	'archibate/genius.nvim',

@@ -26,10 +26,10 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "copilot",  group_index = 2, keyword_length = 1 }, -- Источник для Copilot
 				{ name = "nvim_lsp", group_index = 2, keyword_length = 1 }, -- Источник для LSP
 				{ name = "luasnip",  group_index = 2, keyword_length = 2 }, -- Источник для сниппетов
 				{ name = "buffer",   group_index = 2, keyword_length = 3 }, -- Автодополнение из буфера
+				{ name = "copilot",  group_index = 2, keyword_length = 1 }, -- Источник для Copilot
 				{ name = "path" },              -- Автодополнение путей
 				{ name = "cmdline" },           -- Автодополнение командной строки
 			}),
