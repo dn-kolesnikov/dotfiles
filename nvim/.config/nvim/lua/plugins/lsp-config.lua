@@ -95,6 +95,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
 			ensure_installed = {
+				"bashls", -- Bash
 				"dockerls", -- Docker
 				"gopls", -- Golang
 				"graphql", -- GraphQL
@@ -127,6 +128,7 @@ return {
 			local lspconfig = require("lspconfig")
 
 			local servers = {
+				bashls = {}, -- Bash
 				dockerls = {}, -- Docker
 				graphql = {}, -- GraphQL
 				html = {}, -- HTML

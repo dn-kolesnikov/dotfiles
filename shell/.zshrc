@@ -125,6 +125,8 @@ alias curl="curl --proto '=https' --tlsv1.2"
 alias copy2clipboard="xclip -sel clip"
 
 export GOPRIVATE=gitlab.services.mts.ru
+export GOPROXY=https://nexus.services.mts.ru/repository/go-proxy/
+export GOSUMDB="sum.golang.org https://nexus.services.mts.ru/repository/go-sum"
 
 # The next line updates PATH for CLI.
 if [ -f '/home/dk/yandex-cloud/path.bash.inc' ]; then source '/home/dk/yandex-cloud/path.bash.inc'; fi
@@ -132,3 +134,6 @@ if [ -f '/home/dk/yandex-cloud/path.bash.inc' ]; then source '/home/dk/yandex-cl
 # The next line enables shell command completion for yc.
 if [ -f '/home/dk/yandex-cloud/completion.zsh.inc' ]; then source '/home/dk/yandex-cloud/completion.zsh.inc'; fi
 
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/dk/bin/vault vault
