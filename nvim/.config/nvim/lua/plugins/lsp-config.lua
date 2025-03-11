@@ -128,7 +128,7 @@ return {
 			local lspconfig = require("lspconfig")
 
 			local servers = {
-				bashls = {}, -- Bash
+				bashls = {},
 				dockerls = {}, -- Docker
 				graphql = {}, -- GraphQL
 				html = {}, -- HTML
