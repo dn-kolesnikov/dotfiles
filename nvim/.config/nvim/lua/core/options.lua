@@ -40,27 +40,28 @@ vim.diagnostic.config {
 
 -- global options
 local options = {
-	backup = true, -- backup made
+	backup = true,                             -- backup made
 	backupdir = vim.fn.stdpath("state") .. "/backup", -- backup dir
-	clipboard = "unnamedplus", -- use system wide clipboard
-	cmdheight = 0, -- no space in the neovim command line for displaing messages
-	colorcolumn = "+1", -- highlight column after 'textwidth'
+	clipboard = "unnamedplus",                 -- use system wide clipboard
+	cmdheight = 0,                             -- no space in the neovim command line for displaing messages
+	colorcolumn = "+1",                        -- highlight column after 'textwidth'
 	completeopt = { "menu", "menuone", "noselect" }, -- completion options
-	cursorline = true, -- highlight cursor line
-	hlsearch = false, -- no highlight all maches
-	laststatus = 3, -- always and ONLY the last window has a status line
-	mouse = "a", -- use mouse for VISUAL-mode
-	number = true, -- show number line
-	relativenumber = true, -- show relative number line
-	smartcase = true, -- no ingore case in search patterns
-	spelllang = { "en", "ru" }, -- list languages for spelling
-	splitbelow = true, -- put new windows below current
-	splitright = true, -- put new windows right of current
-	swapfile = false, -- don"t use a swapfile for the buffer
-	textwidth = 120, -- maximum width of text
-	undofile = true, -- undo/redo enable
-	wrap = false, -- disable line wrap
-	termguicolors = true, -- enable 24-bit colour
+	cursorline = true,                         -- highlight cursor line
+	hidden = true,
+	hlsearch = false,                          -- no highlight all maches
+	laststatus = 3,                            -- always and ONLY the last window has a status line
+	mouse = "a",                               -- use mouse for VISUAL-mode
+	number = true,                             -- show number line
+	relativenumber = true,                     -- show relative number line
+	smartcase = true,                          -- no ingore case in search patterns
+	spelllang = { "en", "ru" },                -- list languages for spelling
+	splitbelow = true,                         -- put new windows below current
+	splitright = true,                         -- put new windows right of current
+	swapfile = false,                          -- don"t use a swapfile for the buffer
+	textwidth = 120,                           -- maximum width of text
+	undofile = true,                           -- undo/redo enable
+	wrap = false,                              -- disable line wrap
+	termguicolors = true,                      -- enable 24-bit colour
 }
 
 for k, v in pairs(options) do

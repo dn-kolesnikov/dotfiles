@@ -3,6 +3,7 @@ return {
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			{
+				-- Настройка nvim-dap-virtual-text
 				"theHamsta/nvim-dap-virtual-text",
 				opts = {},
 			},
@@ -19,8 +20,10 @@ return {
 			},
 		},
 		config = function()
+			local dap, dapui = require("dap"), require("dapui")
+
 			-- Настройка адаптеров для Go
-			require("dap").adapters.go = {
+			dap.adapters.go = {
 				type = "server",
 				port = "${port}",
 				executable = {
@@ -30,7 +33,7 @@ return {
 			}
 
 			-- Настройка конфигураций для Go
-			require("dap").configurations.go = {
+			dap.configurations.go = {
 				{
 					type = "go",
 					name = "Debug",
@@ -52,18 +55,25 @@ return {
 				},
 			}
 
-			-- Настройка nvim-dap-ui
-			require("dapui").setup()
-
-			-- Настройка nvim-dap-virtual-text
-			require("nvim-dap-virtual-text").setup()
+			dap.listeners.before.attach.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				dapui.close()
+			end
 		end,
 		keys = {
 			{ "<localleader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
 			{ "<localleader>dc", function() require("dap").continue() end,          desc = "Run/Continue" },
 			{ "<localleader>di", function() require("dap").step_into() end,         desc = "Step Into" },
-			{ "<localleader>dO", function() require("dap").step_over() end,         desc = "Step Over" },
-			{ "<localleader>do", function() require("dap").step_out() end,          desc = "Step Out" },
+			{ "<localleader>do", function() require("dap").step_over() end,         desc = "Step Over" },
+			{ "<localleader>dO", function() require("dap").step_out() end,          desc = "Step Out" },
 			{ "<localleader>dj", function() require("dap").down() end,              desc = "Down" },
 			{ "<localleader>dk", function() require("dap").up() end,                desc = "Up" },
 			{ "<localleader>dl", function() require("dap").run_last() end,          desc = "Run Last" },
@@ -73,9 +83,5 @@ return {
 			{ "<localleader>dt", function() require("dap").terminate() end,         desc = "Terminate" },
 			{ "<localleader>dw", function() require("dap.ui.widgets").hover() end,  desc = "Widgets" },
 		},
-	},
-	{
-		"leoluz/nvim-dap-go",
-		opts = {},
 	},
 }
