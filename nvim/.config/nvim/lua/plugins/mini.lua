@@ -27,10 +27,10 @@ return {
 		"echasnovski/mini.surround",
 		opts = {},
 	},
-	{
-		"echasnovski/mini.tabline",
-		opts = {},
-	},
+	-- {
+	-- 	"echasnovski/mini.tabline",
+	-- 	opts = {},
+	-- },
 	{
 		"echasnovski/mini.trailspace",
 		opts = {},
