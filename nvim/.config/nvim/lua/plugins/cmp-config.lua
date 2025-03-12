@@ -37,6 +37,7 @@ return {
 				documentation = cmp.config.window.bordered()
 			},
 			formatting = {
+				expandable_indicator = true,
 				fields = { "menu", "abbr", "kind" },
 				format = function(entry, item)
 					local icons = {

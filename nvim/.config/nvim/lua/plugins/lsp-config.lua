@@ -68,13 +68,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		bufmap(
 			"n",
 			"<localleader>dk",
-			vim.diagnostic.goto_prev,
+			vim.diagnostic.get_prev,
 			"Move to the previous diagnostic"
 		)
 		bufmap(
 			"n",
 			"<localleader>dj",
-			vim.diagnostic.goto_next,
+			vim.diagnostic.get_next,
 			"Move to the next diagnostic"
 		)
 		bufmap(
@@ -159,7 +159,7 @@ return {
 								},
 							},
 							workspace = {
-								checkThirdParty = false,
+								checkThirdParty = true,
 								library = {
 									vim.env.VIMRUNTIME,
 								},

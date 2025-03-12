@@ -24,12 +24,12 @@ return {
 		},
 		keys = {
 			-- Ключевые привязки для работы с gitsigns.nvim
-			{ ']c',         function() require('gitsigns').next_hunk() end,                 desc = "Next Hunk" },
-			{ '[c',         function() require('gitsigns').prev_hunk() end,                 desc = "Previous Hunk" },
+			{ ']c',         function() require('gitsigns').nav_hunk("next") end,            desc = "Next Hunk" },
+			{ '[c',         function() require('gitsigns').nav_hunk("prev") end,            desc = "Previous Hunk" },
 			{ '<leader>hs', function() require('gitsigns').stage_hunk() end,                desc = "Stage Hunk" },
 			{ '<leader>hr', function() require('gitsigns').reset_hunk() end,                desc = "Reset Hunk" },
 			{ '<leader>hS', function() require('gitsigns').stage_buffer() end,              desc = "Stage Buffer" },
-			{ '<leader>hu', function() require('gitsigns').undo_stage_hunk() end,           desc = "Undo Stage Hunk" },
+			{ '<leader>hu', function() require('gitsigns').stage_hunk() end,                desc = "Undo Stage Hunk" },
 			{ '<leader>hR', function() require('gitsigns').reset_buffer() end,              desc = "Reset Buffer" },
 			{ '<leader>hp', function() require('gitsigns').preview_hunk() end,              desc = "Preview Hunk" },
 			{ '<leader>hb', function() require('gitsigns').blame_line({ full = true }) end, desc = "Blame Line" },
@@ -37,9 +37,5 @@ return {
 			{ '<leader>hd', function() require('gitsigns').diffthis() end,                  desc = "Diff This" },
 			{ '<leader>hD', function() require('gitsigns').diffthis('~') end,               desc = "Diff This (~)" },
 		},
-		-- config = function(_, opts)
-		-- 	-- Настройка плагина
-		-- 	require('gitsigns').setup(opts)
-		-- end,
 	},
 }
