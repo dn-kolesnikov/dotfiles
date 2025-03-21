@@ -18,52 +18,28 @@ return {
 					{ "<localleader>de", function() require("dapui").eval() end,     desc = "Eval",  mode = { "n", "v" } },
 				},
 			},
+			{
+				"leoluz/nvim-dap-go",
+				opts = {},
+				ft = "go",
+
+			},
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
 
-			-- Настройка адаптеров для Go
-			dap.adapters.go = {
-				type = "server",
-				port = "${port}",
-				executable = {
-					command = "dlv",
-					args = { "dap", "-l", "127.0.0.1:${port}" },
-				},
-			}
-
-			-- Настройка конфигураций для Go
-			dap.configurations.go = {
-				{
-					type = "go",
-					name = "Debug",
-					request = "launch",
-					program = "${file}",
-				},
-				{
-					type = "go",
-					name = "Debug Package",
-					request = "launch",
-					program = "${fileDirname}",
-				},
-				{
-					type = "go",
-					name = "Debug Test", -- Для отладки тестов
-					request = "launch",
-					mode = "test",
-					program = "${fileDirname}",
-				},
-			}
-
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
 			end
+
 			dap.listeners.before.launch.dapui_config = function()
 				dapui.open()
 			end
+
 			dap.listeners.before.event_terminated.dapui_config = function()
 				dapui.close()
 			end
+
 			dap.listeners.before.event_exited.dapui_config = function()
 				dapui.close()
 			end

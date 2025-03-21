@@ -127,8 +127,16 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 
+			local schemastore = require("schemastore")
+
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities.textDocument.completion.completionItem.snippetSupport = true
+			capabilities.textDocument.foldingRange.dynamicRegistration = false
+			capabilities.textDocument.foldingRange.lineFoldingOnly = true
+
+
 			local servers = {
-				bashls = {},
+				bashls = {}, -- Bash
 				dockerls = {}, -- Docker
 				graphql = {}, -- GraphQL
 				html = {}, -- HTML
@@ -144,11 +152,24 @@ return {
 						"json",
 						"jsonc",
 					},
+					settings = {
+						json = {
+							schemas = schemastore.json.schemas(),
+							format = { enable = true }, -- Включить форматирование
+							validate = { enable = true }, -- Включить валидацию
+						},
+						avsc = {
+							schemas = schemastore.json.schemas(),
+							format = { enable = true }, -- Включить форматирование
+							validate = { enable = true }, -- Включить валидацию
+						},
+					},
+					capabilities = capabilities,
 				},
 
 				lua_ls = { -- lua_ls
 					settings = {
-						Lua = {
+						lua = {
 							runtime = {
 								version = "LuaJIT",
 							},
@@ -187,34 +208,30 @@ return {
 					settings = {
 						yaml = {
 							schemaStore = {
-								enable = true,
-								url = "https://www.schemastore.org/api/json/catalog.json",
+								enable = false,
+								url = "",
 							},
-							format = {
-								enable = true,
-							},
-							schemaDownload = {
-								enable = true,
-							},
-							hover = true,
-							validate = true,
-							completion = true,
+							schemas = schemastore.yaml.schemas(),
+							format = { enable = true }, -- Включить форматирование
+							completion = true, --
+							hover = true, --
+							validate = true, -- Включить валидацию
 						},
 					},
-					capabilities = {
-						textDocument = {
-							foldingRange = {
-								dynamicRegistration = false,
-								lineFoldingOnly = true,
-							},
-						},
-					},
+					capabilities = capabilities,
 				},
-
 			}
 
-			for server, opts in pairs(servers) do
-				lspconfig[server].setup({ opts })
+			for name, opts in pairs(servers) do
+				lspconfig[name].setup({
+					opts
+					-- cmd = opts.cmd,
+					-- filetypes = opts.filetypes,
+					-- settings = opts.settings
+				})
+				if opts.cmd then
+					vim.notify(vim.inspect(lspconfig[name]))
+				end
 			end
 		end,
 	},

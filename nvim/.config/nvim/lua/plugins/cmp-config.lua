@@ -26,12 +26,12 @@ return {
 				end,
 			},
 			sources = cmp.config.sources({
-				{ name = "nvim_lsp", group_index = 2, keyword_length = 1 }, -- Источник для LSP
-				{ name = "luasnip",  group_index = 2, keyword_length = 2 }, -- Источник для сниппетов
-				{ name = "buffer",   group_index = 2, keyword_length = 3 }, -- Автодополнение из буфера
-				{ name = "copilot",  group_index = 2, keyword_length = 1 }, -- Источник для Copilot
-				{ name = "path" },              -- Автодополнение путей
-				{ name = "cmdline" },           -- Автодополнение командной строки
+				{ name = "nvim_lsp" }, -- Источник для LSP
+				{ name = "buffer" }, -- Автодополнение из буфера
+				{ name = "copilot" }, -- Источник для Copilot
+				{ name = "luasnip" }, -- Источник для сниппетов
+				{ name = "path" }, -- Автодополнение путей
+				{ name = "cmdline" }, -- Автодополнение командной строки
 			}),
 			window = {
 				documentation = cmp.config.window.bordered()
@@ -63,7 +63,6 @@ return {
 				["<C-e>"] = cmp.mapping.abort(),
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
-
 				["<C-f>"] = cmp.mapping(function(fallback)
 					if luasnip.jumpable(1) then
 						luasnip.jump(1)
@@ -75,25 +74,6 @@ return {
 				["<C-b>"] = cmp.mapping(function(fallback)
 					if luasnip.jumpable(-1) then
 						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-
-				["<Tab>"] = cmp.mapping(function(fallback)
-					local col = vim.fn.col(".") - 1
-					if cmp.visible() then
-						cmp.select_next_item(select_opts)
-					elseif col == 0 or vim.fn.getline("."):sub(col, col):match("%s") then
-						fallback()
-					else
-						cmp.complete()
-					end
-				end, { "i", "s" }),
-
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item(select_opts)
 					else
 						fallback()
 					end
