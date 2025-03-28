@@ -105,10 +105,9 @@ return {
 				"lua_ls", -- Lua
 				"marksman", -- Markdown
 				"pbls", -- Protobuf
-				"prettier", -- JSON, JavaScript
+				"prettier", -- JSON, JavaScript formater
 				"sqls", -- SQL
 				"taplo", -- TOML
-				"vacuum", -- OpenAPI/YAML
 				"yamlls", -- YAML
 			},
 			automatic_installation = true,
@@ -129,11 +128,10 @@ return {
 
 			local schemastore = require("schemastore")
 
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
-			capabilities.textDocument.foldingRange.dynamicRegistration = false
-			capabilities.textDocument.foldingRange.lineFoldingOnly = true
-
+			local capabilities = vim.tbl_deep_extend("force",
+				vim.lsp.protocol.make_client_capabilities(),
+				require('cmp_nvim_lsp').default_capabilities()
+			)
 
 			local servers = {
 				bashls = {}, -- Bash
@@ -148,46 +146,28 @@ return {
 
 				jsonls = { -- JSON
 					filetypes = {
-						"avsc",
 						"json",
 						"jsonc",
 					},
 					settings = {
 						json = {
 							schemas = schemastore.json.schemas(),
-							format = { enable = true }, -- Включить форматирование
-							validate = { enable = true }, -- Включить валидацию
-						},
-						avsc = {
-							schemas = schemastore.json.schemas(),
-							format = { enable = true }, -- Включить форматирование
-							validate = { enable = true }, -- Включить валидацию
+							format = { enable = true },
+							validate = { enable = true },
 						},
 					},
-					capabilities = capabilities,
 				},
 
 				lua_ls = { -- lua_ls
 					settings = {
 						lua = {
-							runtime = {
-								version = "LuaJIT",
-							},
-							diagnostics = {
-								globals = {
-									"vim",
-									"require",
-								},
-							},
+							runtime = { version = "LuaJIT" },
+							diagnostics = { globals = { "vim", "require" } },
 							workspace = {
 								checkThirdParty = true,
-								library = {
-									vim.env.VIMRUNTIME,
-								},
+								library = { vim.env.VIMRUNTIME },
 							},
-							telemetry = {
-								enable = false,
-							},
+							telemetry = { enable = false },
 						},
 					},
 				},
@@ -195,10 +175,8 @@ return {
 				gopls = { -- Golang
 					settings = {
 						gopls = {
+							analyses = { unusedparams = true },
 							gofumpt = true,
-							analyses = {
-								unusedparams = true,
-							},
 							staticcheck = true,
 						},
 					},
@@ -207,28 +185,23 @@ return {
 				yamlls = { -- YAML
 					settings = {
 						yaml = {
-							schemaStore = {
-								enable = false,
-								url = "",
-							},
+							completion = true,
+							format = { enable = true },
+							hover = true,
+							schemaStore = { enable = false, url = "" },
 							schemas = schemastore.yaml.schemas(),
-							format = { enable = true }, -- Включить форматирование
-							completion = true, --
-							hover = true, --
-							validate = true, -- Включить валидацию
+							validate = true,
 						},
 					},
-					capabilities = capabilities,
 				},
 			}
 
 			for name, opts in pairs(servers) do
 				lspconfig[name].setup({
-					opts
-					-- cmd = opts.cmd,
-					-- filetypes = opts.filetypes,
-					-- settings = opts.settings
+					opts,
+					capabilities = capabilities,
 				})
+				vim.notify(vim.inspect(lspconfig[name]))
 				if opts.cmd then
 					vim.notify(vim.inspect(lspconfig[name]))
 				end
