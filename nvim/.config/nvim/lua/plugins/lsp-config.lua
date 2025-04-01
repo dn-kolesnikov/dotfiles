@@ -201,7 +201,6 @@ return {
 					opts,
 					capabilities = capabilities,
 				})
-				vim.notify(vim.inspect(lspconfig[name]))
 				if opts.cmd then
 					vim.notify(vim.inspect(lspconfig[name]))
 				end
