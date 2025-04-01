@@ -70,10 +70,10 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history sudo tmux golang)
+plugins=(git history sudo tmux golang pass vi-mode)
 
 ZSH_TMUX_AUTOSTART=true
-
+VI_MODE_SET_CURSOR=true
 
 
 source $ZSH/oh-my-zsh.sh
@@ -87,9 +87,10 @@ export READER="zathura"
 export TERMINAL="kitty"
 
 #if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
+#export CLUTTER_BACKEND=wayland
 #export GDK_BACKEND=wayland
-#export MOZ_ENABLE_WAYLAND=1
-#export MOZ_WEBRENDER=1
+#export SDL_VIDEODRIVER=wayland
+#export QT_AUTO_SCREEN_SCALE_FACTOR=1
 #export QT_QPA_PLATFORM=wayland
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
