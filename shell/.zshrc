@@ -125,6 +125,39 @@ alias mvi="mpv --config-dir=$HOME/.config/mvi"
 alias curl="curl --proto '=https' --tlsv1.2"
 alias copy2clipboard="xclip -sel clip"
 
+# Алиас для быстрого коммита и пуша с JIRA-номером из ветки
+gcpmts() {
+    # Проверка, что мы в Git-репозитории
+    if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        echo "❌ Ошибка: это не Git-репозиторий!"
+        return 1
+    fi
+
+    # Получаем имя ветки и номер задачи
+    local branch_name=$(git symbolic-ref --short HEAD 2>/dev/null)
+    if [ -z "$branch_name" ]; then
+        echo "❌ Ошибка: не удалось получить имя ветки (возможно, detached HEAD)"
+        return 1
+    fi
+
+    local jira_number=$(echo "$branch_name" | sed 's|.*/||')
+    if [ -z "$jira_number" ]; then
+        echo "❌ Ошибка: не удалось извлечь номер задачи из ветки ($branch_name)"
+        return 1
+    fi
+
+    # Формируем сообщение коммита
+    local commit_message="[$jira_number] ${1:-"minor update"}"
+
+    # Выполняем коммит и пуш
+    echo "➤ git commit -a -m \"$commit_message\""
+    git commit -a -m "$commit_message" || return 1
+
+    echo "➤ git push origin \"$branch_name\""
+    git push origin "$branch_name"
+}
+
+#
 export GOPRIVATE=gitlab.services.mts.ru
 export GOPROXY=https://nexus.services.mts.ru/repository/go-proxy/
 export GOSUMDB="sum.golang.org https://nexus.services.mts.ru/repository/go-sum"
