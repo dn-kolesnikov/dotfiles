@@ -40,11 +40,3 @@ vim.opt.langmap = table.concat(langmap_keys, ",")
 -- map space to leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-
--- map "qq" to ESC
-vim.keymap.set({ "i", "v" }, "qq", "<esc>")
-
--- Go to tab by number
--- vim.keymap.set({ "n", "i", "v" }, "<leader>1", "<cmd>bfirst<cr>")
--- vim.keymap.set({ "n", "i", "v" }, "<leader>0", "<cmd>blast<cr>")
--- vim.keymap.set({ "n", "i", "v" }, "<leader><tab>", "<cmd>bnext<cr>")
