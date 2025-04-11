@@ -12,7 +12,7 @@
 )
 
 (defalias
-	escctrl (tap-hold 100 100 esc lctl)
+	escctrl (tap-hold $tap-time $hold-time esc lctl)
 	a (tap-hold $tap-time $hold-time a lmet)
 	s (tap-hold $tap-time $hold-time s lalt)
 	d (tap-hold $tap-time $hold-time d lsft)
