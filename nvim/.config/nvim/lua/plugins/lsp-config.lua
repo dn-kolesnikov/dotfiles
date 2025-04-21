@@ -178,6 +178,8 @@ return {
 							analyses = { unusedparams = true },
 							gofumpt = true,
 							staticcheck = true,
+							-- Позволяет видеть имплементации интерфейсов
+							hoverKind = "Structured", -- или "FullDocumentation"
 						},
 					},
 				},
