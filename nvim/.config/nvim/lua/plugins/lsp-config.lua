@@ -180,6 +180,7 @@ return {
 							staticcheck = true,
 							-- Позволяет видеть имплементации интерфейсов
 							hoverKind = "Structured", -- или "FullDocumentation"
+							-- hoverKind = "FullDocumentation", -- или "Structured"
 						},
 					},
 				},
