@@ -1,0 +1,36 @@
+;; Основные настройки
+(defcfg
+	process-unmapped-keys yes
+)
+;; Все физические клавиши
+(defsrc
+	caps a s d f j k l ;
+)
+;; Настройки таймингов
+(defvar
+	tap-time 150  ;; Время короткого нажатия (мс)
+	hold-time 200 ;; Время удержания (мс)
+)
+;; Основной слой
+(deflayer base
+	@escctrl @a @s @d @f @j @k @l @;
+)
+;;
+;;(deflayer nomods
+;;	a s d f j k l ;
+;;)
+;; Алиасы для tap-hold
+(defalias
+	escctrl (tap-hold $tap-time $hold-time esc lctl)
+	a (tap-hold $tap-time $hold-time a lmet)
+	s (tap-hold $tap-time $hold-time s lalt)
+	d (tap-hold $tap-time $hold-time d lsft)
+	f (tap-hold $tap-time $hold-time f lctl)
+	j (tap-hold $tap-time $hold-time j rctl)
+	k (tap-hold $tap-time $hold-time k rsft)
+	l (tap-hold $tap-time $hold-time l ralt)
+	; (tap-hold $tap-time $hold-time ; rmet)
+)
+;; Навигационный слой, vim-like h - left, j - down, k - up, l - right
+;; (deflayer navigation
+;;)
