@@ -108,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 export BROWSER="yandex-browser"
 export EDITOR="nvim"
-export FILE="yazy"
+export FILE="yazi"
 export READER="zathura"
 export TERMINAL="kitty"
 
