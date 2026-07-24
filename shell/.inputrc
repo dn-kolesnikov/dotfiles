@@ -1,7 +1,12 @@
 $include /etc/inputrc
 
+set input-meta on
+set output-meta on
+set convert-meta off
+
 set bell-style none
 set editing-mode vi
+
 $if mode=vi
 
 set show-mode-in-prompt on

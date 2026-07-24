@@ -32,6 +32,7 @@ return {
 				"make",
 				"markdown",
 				"markdown_inline",
+				"mermaid",
 				"nginx",
 				"printf",
 				"python",

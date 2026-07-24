@@ -11,6 +11,7 @@ return {
 			yaml = { "prettier" },
 			lua = { "stylua" },
 			sql = { "sleek" },
+			cql = { "sleek" },
 			go = {
 				"goimports",
 				"gofumpt",

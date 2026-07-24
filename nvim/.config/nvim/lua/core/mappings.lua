@@ -126,3 +126,8 @@ map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { desc = "Remove wor
 map("n", "<leader>wl", function()
 	vim.notify(vim.inspect(vim.lsp.buf.list_workspace_folders()), vim.log.levels.INFO)
 end, { desc = "List workspace folders" })
+
+map("n", "<leader>u", function()
+	vim.cmd.packadd("nvim.undotree")
+	require("undotree").open()
+end, { desc = "Toggle builtin Undotree" })

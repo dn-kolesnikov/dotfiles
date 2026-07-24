@@ -70,11 +70,37 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history sudo tmux golang pass vi-mode z)
+plugins=(
+	archlinux
+	colorize
+	command-not-found
+	genpass
+	git
+	golang
+	k9s
+	pass
+	sudo
+	tmux
+	vi-mode
+	fzf		# после vi-mode для биндинга CTRL+R
+	z
+)
 
 ZSH_TMUX_AUTOSTART=true
 VI_MODE_SET_CURSOR=true
 
+HISTORY_IGNORE="(ls|cd|pwd|exit|man)*"
+setopt EXTENDED_HISTORY      # Делать записи в файле истории в формате ':start:elapsed;command'.
+setopt INC_APPEND_HISTORY    # Писать данные в файл истории немедленно, а не тогда, когда осуществляется выход из оболочки.
+setopt SHARE_HISTORY         # Использовать во всех сессиях общее хранилище истории.
+setopt HIST_IGNORE_DUPS      # Не делать повторную запись о только что записанном событии.
+setopt HIST_IGNORE_ALL_DUPS  # Удалять старую запись о событии в том случае, если новое событие является дубликатом старого.
+setopt HIST_IGNORE_SPACE     # Не делать записи о командах, начинающихся с пробела.
+setopt HIST_SAVE_NO_DUPS     # Не записывать дубликаты событий в файл истории.
+setopt HIST_VERIFY           # Перед выполнением команд показывать записи о них из истории команд.
+setopt APPEND_HISTORY        # Добавлять записи к файлу истории (по умолчанию).
+setopt HIST_NO_STORE         # Не хранить записи о командах history.
+setopt HIST_REDUCE_BLANKS    # Убирать лишние пробелы из командных строк, добавляемых в историю.
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,7 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 export BROWSER="yandex-browser"
 export EDITOR="nvim"
-export FILE="lf"
+export FILE="yazy"
 export READER="zathura"
 export TERMINAL="kitty"
 
@@ -157,6 +183,9 @@ gcpmts() {
     git push origin "$branch_name"
 }
 
+if [ -f '/home/dk/vault.env' ]; then source '/home/dk/vault.env'; fi
+if [ -f '/home/dk/mts-dev.env' ]; then source '/home/dk/vault.env'; fi
+
 #
 # export GOPRIVATE=gitlab.services.mts.ru
 # export GOPROXY=https://nexus.services.mts.ru/repository/go-proxy/
@@ -170,7 +199,6 @@ if [ -f '/home/dk/yandex-cloud/path.bash.inc' ]; then source '/home/dk/yandex-cl
 # The next line enables shell command completion for yc.
 if [ -f '/home/dk/yandex-cloud/completion.zsh.inc' ]; then source '/home/dk/yandex-cloud/completion.zsh.inc'; fi
 
-if [ -f '/home/dk/vault.env' ]; then source '/home/dk/vault.env'; fi
 
 # autoload -U +X bashcompinit && bashcompinit
 # complete -o nospace -C /home/dk/bin/vault vault

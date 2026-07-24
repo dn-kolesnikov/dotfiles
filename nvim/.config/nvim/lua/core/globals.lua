@@ -45,3 +45,5 @@ vim.g.maplocalleader = " "
 vim.g.no_plugin_maps = true
 
 vim.g.have_nerd_font = true
+
+require("vim._core.ui2").enable({})

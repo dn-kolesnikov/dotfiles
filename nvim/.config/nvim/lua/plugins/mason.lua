@@ -12,9 +12,10 @@ return {
 		opts = {
 			-- list of servers for mason to install
 			ensure_installed = {
-				"autotools_ls", -- Makefile
+				-- "autotools_ls", -- Makefile
 				"bashls", -- Bash
 				"buf_ls", -- Protobuf
+				-- "cqlls", -- CQL Cassandra/ScylLa
 				"dockerls", -- Docker
 				"golangci_lint_ls", -- Golang
 				"gopls", -- Golang
@@ -48,8 +49,10 @@ return {
 				"golangci-lint", -- golang linter
 				"golines", -- golang formatter
 				"jq", -- json formatter
-				"sleek", -- postgres formatter
 				"prettier", -- prettier formatter
+				"shellcheck",
+				"shfmt", -- a shell formatter (sh/bash/mksh)
+				"sleek", -- postgres formatter
 				"stylua", -- lua formatter
 				"vacuum", -- openapi/swagger linter
 			},
