@@ -27,12 +27,10 @@ return {
 				"marksman", -- Markdown
 				"postgres_lsp", -- SQL
 				"qmlls", -- QML
-				"stylua", -- lua formatter
 				"taplo", -- TOML
 				"vacuum", -- openapi/swagger
 				"yamlls", -- YAML
 			},
-			automatic_installation = true,
 		},
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
@@ -55,6 +53,7 @@ return {
 				"sleek", -- postgres formatter
 				"stylua", -- lua formatter
 				"vacuum", -- openapi/swagger linter
+				"tree-sitter-cli", -- tree sitter cli
 			},
 		},
 		dependencies = {

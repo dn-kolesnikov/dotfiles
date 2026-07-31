@@ -8,6 +8,7 @@ return {
 			delete = { text = "✖" },
 			topdelete = { text = "▔" },
 			changedelete = { text = "≃" },
+			untracked = { text = "┆" },
 		},
 		signcolumn = true,
 		current_line_blame = true,
@@ -16,9 +17,9 @@ return {
 			virt_text_pos = "eol",
 			delay = 1000,
 			virt_text_priority = 100,
+			use_focus = true,
 		},
 		watch_gitdir = {
-			interval = 1000,
 			follow_files = true,
 		},
 	},
