@@ -12,6 +12,7 @@ return {
 			lua = { "stylua" },
 			sql = { "sleek" },
 			cql = { "sleek" },
+			kdl = { "kdlfmt" },
 			go = {
 				"goimports",
 				"gofumpt",

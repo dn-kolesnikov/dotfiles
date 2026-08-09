@@ -55,45 +55,4 @@ setopt HIST_REDUCE_BLANKS    # Убирать лишние пробелы из �
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export BROWSER="yandex-browser-stable"
-export EDITOR="nvim"
-export FILE="yazi"
-export READER="zathura"
-export TERMINAL="kitty"
-
-#if [ "$XDG_SESSION_TYPE" = "wayland" ] ; then
-#export CLUTTER_BACKEND=wayland
-#export GDK_BACKEND=wayland
-#export SDL_VIDEODRIVER=wayland
-#export QT_AUTO_SCREEN_SCALE_FACTOR=1
-#export QT_QPA_PLATFORM=wayland
-#export QT_QPA_PLATFORMTHEME=qt5ct
-#export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-#fi
-
-#export XDG_CONFIG_HOME="$HOME/.config"
-#export XDG_DESKTOP_DIR="$HOME/desktop"
-#export XDG_DOCUMENTS_DIR="$HOME/documents"
-#export XDG_DOWNLOAD_DIR="$HOME/downloads"
-#export XDG_MUSIC_DIR="$HOME/music"
-#export XDG_PICTURES_DIR="$HOME/pictures"
-#export XDG_PUBLICSHARE_DIR="$HOME/public"
-#export XDG_TEMPLATES_DIR="$HOME/templates"
-#export XDG_VIDEOS_DIR="$HOME/videos"
-#export XDG_CACHE_HOME="/tmp/${USER}/cache"
-
-# set PATH so it includes user's private bin if it exists
-[ -d "$HOME/bin" ] && export PATH="$PATH:$HOME/bin"
-[ -d "$HOME/.cargo/bin" ] && export PATH="$PATH:$HOME/.cargo/bin"
-[ -d "$HOME/.local/bin" ] && export PATH="$PATH:$HOME/.local/bin"
-[ -d "$HOME/go/bin" ] && export PATH="$PATH:$HOME/go/bin"
-[ -d "/usr/local/go/bin" ] && export PATH="$PATH:/usr/local/go/bin"
-
-# For Cisco AnyConnect Login to work on NVIDIA
-# export WEBKIT_DISABLE_DMABUF_RENDERER=1
-
-alias fullupgrade="sudo apt update && sudo apt full-upgrade -y; flatpak update -y"
-alias mvi="mpv --config-dir=$HOME/.config/mvi"
-alias curl="curl --proto '=https' --tlsv1.2"
-alias copy2clipboard="xclip -sel clip"
+[ -f "$HOME/.config/shell/user.env" ] && source "$HOME/.config/shell/user.env"

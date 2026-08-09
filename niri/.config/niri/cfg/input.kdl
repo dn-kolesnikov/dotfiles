@@ -1,0 +1,31 @@
+// ────────────── Input Configuration ──────────────
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+gestures {
+	hot-corners {
+		off
+	}
+}
+
+input {
+    keyboard {
+        xkb {
+	    layout "us,ru"
+	    options "grp:win_space_toggle,caps:escape"
+        }
+
+	track-layout "global"
+        numlock
+	// repeat-delay 200
+	// repeat-rate 50
+    }
+
+    touchpad {
+        tap
+	dwt
+        natural-scroll
+    }
+
+    focus-follows-mouse // Automatically focus windows under the mouse pointer
+    workspace-auto-back-and-forth // Enable workspace back & forth switching
+}

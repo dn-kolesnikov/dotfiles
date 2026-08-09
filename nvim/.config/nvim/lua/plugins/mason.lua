@@ -1,10 +1,10 @@
--- register filetypes for vacuum lsp
-vim.filetype.add({
-	pattern = {
-		["openapi.*%.ya?ml"] = "yaml.openapi",
-		["openapi.*%.json"] = "json.openapi",
-	},
-})
+-- -- register filetypes for vacuum lsp
+-- vim.filetype.add({
+-- 	pattern = {
+-- 		["openapi.*%.ya?ml"] = "yaml.openapi",
+-- 		["openapi.*%.json"] = "json.openapi",
+-- 	},
+-- })
 
 return {
 	{
@@ -47,13 +47,14 @@ return {
 				"golangci-lint", -- golang linter
 				"golines", -- golang formatter
 				"jq", -- json formatter
+				"kdlfmt", -- kdl formatter
 				"prettier", -- prettier formatter
 				"shellcheck",
 				"shfmt", -- a shell formatter (sh/bash/mksh)
 				"sleek", -- postgres formatter
 				"stylua", -- lua formatter
-				"vacuum", -- openapi/swagger linter
 				"tree-sitter-cli", -- tree sitter cli
+				"vacuum", -- openapi/swagger linter
 			},
 		},
 		dependencies = {
